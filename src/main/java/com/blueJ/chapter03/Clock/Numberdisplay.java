@@ -1,4 +1,4 @@
-package com.drini.chapter03;
+package src.main.java.com.blueJ.chapter03.Clock;
 
 public class Numberdisplay {
 

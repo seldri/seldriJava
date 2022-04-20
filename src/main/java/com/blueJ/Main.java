@@ -1,5 +1,6 @@
-package com.drini;
-import com.drini.chapter03.*;
+package src.main.java.com.blueJ;
+import src.main.java.com.blueJ.chapter03.*;
+import src.main.java.com.blueJ.chapter03.Clock.Clockdisplay;
 
 public class Main {
     public static void main(String[] args) {
