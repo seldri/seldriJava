@@ -1,4 +1,4 @@
-package src.main.java.com.blueJ.chapter03.ClockGUI;
+package com.blueJ.chapter03.ClockGUI;
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;

@@ -1,6 +1,6 @@
-package src.main.java.com.blueJ.chapter03.Clock;
+package com.blueJ.chapter03.Clock;
 
-import src.main.java.com.blueJ.chapter03.Clock.Numberdisplay;
+import com.blueJ.chapter03.Clock.Numberdisplay;
 
 public class Clockdisplay {
     /*Class to put together and display the time

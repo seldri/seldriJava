@@ -1,4 +1,4 @@
-package src.main.java.com.blueJ.chapter02;
+package com.blueJ.chapter02;
 
 public class Book{
 

@@ -8,6 +8,13 @@
             "type": "java",
             "name": "Launch Main",
             "request": "launch",
+            "mainClass": "com.blueJ.Main",
+            "projectName": "DriniTraining"
+        },
+        {
+            "type": "java",
+            "name": "Launch Main",
+            "request": "launch",
             "mainClass": "src.main.java.com.blueJ.Main",
             "projectName": "driniblueJ_3ae8faf7"
         },
@@ -21,7 +28,7 @@
             "type": "java",
             "name": "Launch Main",
             "request": "launch",
-            "mainClass": "com.drini.Main",
+            "mainClass": "com.blueJ.Main",
             "projectName": "driniblueJ"
         }
     ]
