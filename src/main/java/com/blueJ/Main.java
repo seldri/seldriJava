@@ -6,6 +6,6 @@ public class Main {
     public static void main(String[] args) {
 
         Clockdisplay clock01 = new Clockdisplay(11, 23);
-        clock01.getDisplayValue();
+        System.out.println(clock01.getDisplayValue());
     }
 }
