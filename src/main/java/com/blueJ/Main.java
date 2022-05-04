@@ -8,4 +8,4 @@ public class Main {
         Clockdisplay clock01 = new Clockdisplay(11, 23);
         System.out.println(clock01.getDisplayValue());
     }
-}
+} 

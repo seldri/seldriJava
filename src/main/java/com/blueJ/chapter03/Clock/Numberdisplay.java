@@ -3,8 +3,8 @@ package com.blueJ.chapter03.Clock;
 public class Numberdisplay {
 
     //Class to display a type of number with a limit and a value it holds at a given time
-    public int limit;
-    public int value;
+    private int limit;
+    private int value;
     //Constructor of the class which sets the limit depending on the time unit
     public Numberdisplay(int timeLimit) {
         limit = timeLimit;
