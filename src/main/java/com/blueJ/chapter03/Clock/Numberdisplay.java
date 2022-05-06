@@ -27,6 +27,7 @@ public class Numberdisplay {
             return "" + value;
         }
     }
+    
     //Starting time can be set, but it cannot be bigger than the limit or smaller than 0
     public void setTime(int startingTime){
         if((startingTime >= 0) && (startingTime < limit)) {
