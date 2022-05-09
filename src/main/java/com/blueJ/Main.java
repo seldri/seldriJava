@@ -1,18 +1,16 @@
 package com.blueJ;
+import com.blueJ.chapter04.MusicOrganizer.*;
 
-<<<<<<< HEAD
 //import com.blueJ.chapter03.*;
 //import com.blueJ.chapter03.Clock.Clockdisplay;
-=======
->>>>>>> main
 
 public class Main {
 
-<<<<<<< HEAD
-
 
     public static void main(String[] args) {
-=======
->>>>>>> main
+
+        ArrayListTraining a1 = new ArrayListTraining();
+        a1.addToList();
+        a1.printOutList();
     }
 } 
