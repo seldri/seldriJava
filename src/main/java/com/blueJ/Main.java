@@ -1,8 +1,18 @@
 package com.blueJ;
 
+<<<<<<< HEAD
+//import com.blueJ.chapter03.*;
+//import com.blueJ.chapter03.Clock.Clockdisplay;
+=======
+>>>>>>> main
 
 public class Main {
-    public static void main(String[] args) {
 
+<<<<<<< HEAD
+
+
+    public static void main(String[] args) {
+=======
+>>>>>>> main
     }
 } 

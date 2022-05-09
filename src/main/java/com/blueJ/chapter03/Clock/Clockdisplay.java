@@ -1,6 +1,7 @@
 package com.blueJ.chapter03.Clock;
 
 import com.blueJ.chapter03.Clock.Numberdisplay;
+import java.util.ArrayList;
 
 public class Clockdisplay {
     /*Class to put together and display the time
@@ -9,6 +10,7 @@ public class Clockdisplay {
     private Numberdisplay hours;
     private Numberdisplay minutes;
     private String displayValue;
+    private ArrayList<String> names;
     //Constructor which sets hours and minutes of the clockdisplay to 0 and 0 by creating new Numberdisplay Objects
     public Clockdisplay(){
         hours = new Numberdisplay(24);
