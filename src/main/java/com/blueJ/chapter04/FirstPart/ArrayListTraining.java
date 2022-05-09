@@ -1,4 +1,4 @@
-package com.blueJ.chapter04.MusicOrganizer;
+package com.blueJ.chapter04.FirstPart;
 import java.util.ArrayList;
 
 public class ArrayListTraining{
