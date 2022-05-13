@@ -1,4 +1,4 @@
-package com.blueJ.chapter04;
+package com.blueJ.chapter04.MusicSystem;
 import java.util.ArrayList;
 
 public class MusicOrganizer

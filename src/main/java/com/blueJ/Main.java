@@ -1,6 +1,6 @@
 package com.blueJ;
-import com.blueJ.chapter04.MusicOrganizer;
-import com.blueJ.chapter04.ArrayListTraining;
+import com.blueJ.chapter04.ArrayListTrain.ArrayListTraining;
+import com.blueJ.chapter04.MusicSystem.MusicOrganizer;
 
 //import com.blueJ.chapter03.*;
 //import com.blueJ.chapter03.Clock.Clockdisplay;
