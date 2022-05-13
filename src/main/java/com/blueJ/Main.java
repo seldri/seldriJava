@@ -20,7 +20,7 @@ public class Main {
         a1.makeABid(1, tim, 15);
         a1.makeABid(2, tim, 12);
         a1.makeABid(3, bob, 8);
-        a1.close();
-        
+        //a1.close();
+        System.out.println(a1.getLot(1).getDescription());
     }
 } 

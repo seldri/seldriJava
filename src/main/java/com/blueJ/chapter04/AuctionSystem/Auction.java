@@ -21,7 +21,7 @@ public class Auction{
         }
     }
     
-    public Lot getLot(int lotNumber){
+    /*public Lot getLot(int lotNumber){
         
         if((lotNumber >= 1) && (lotNumber < nextLotNumber)){
             Lot selectedLot = lots.get(lotNumber - 1);
@@ -36,21 +36,17 @@ public class Auction{
             System.out.println("Lot number: " + lotNumber + " does not exist!");
             return null;
         }
-    }
-    
-    /*public void makeABid(int lotNumber, long value, Person bidder){
-        if(lotNumber >= 0 && lotNumber < lots.size()){
-            if(lots.get(lotNumber).bidFor(new Bid(bidder, value)) == true){
-                System.out.println("The new Bid was successful!");
-            }
-            else{
-                System.out.println("The Bid must be bigger than the current Bid of: " + lots.get(lotNumber).getHighestBid());
-            }
-        }
-        else{
-            System.out.println("The position of the lot must be in between: 0 and " + (lots.size() - 1));
-        }
     }*/
+
+    public Lot getLot(int lotNumber){
+        Lot tempLot = null;
+        for(Lot lot : lots){
+            if(lotNumber == lot.getNumber()){
+                tempLot = lot;
+            }
+        }
+        return tempLot;
+    }
 
     public void makeABid(int lotNumber, Person bidder, long value){
         Lot selectedLot = getLot(lotNumber);
@@ -79,4 +75,31 @@ public class Auction{
         }
     }
 
+    public ArrayList<Lot> getUnsold(){
+        ArrayList<Lot> unsoldLots = new ArrayList<>();
+        for(Lot lot : lots){
+            if(lot.getHighestBid() == null){
+                unsoldLots.add(lot);
+            }
+        }
+        return unsoldLots;
+    }
+
+    /**
+     * Delete Lot with the given Number
+     * @param number the number of the Lot, which should be removed
+     * @return the Lot with the given number, or null if
+     * a such Lot does not exist 
+     */
+    public Lot deleteLot(int number){
+        Lot lot = getLot(number);
+        if(lot != null){
+            lots.remove(lot);
+            System.out.println("Lot on number: " + number + " removed!");
+        }
+        else{
+            System.out.println("There is already no Lot on the number: " + number);
+        }
+        return lot;
+    }
 }
