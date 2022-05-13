@@ -57,7 +57,7 @@ public class Auction{
         if(selectedLot != null){
             boolean successful = selectedLot.bidFor(new Bid(bidder, value));
             if(successful){
-                System.out.println("The new Bid for the Lot: " + selectedLot.getDescription() + " has been added!");
+                System.out.println("The new Bid for the Lot: " + selectedLot.getDescription() + ", has been added!");
             }
             else{
                 Bid highestBid = selectedLot.getHighestBid();
@@ -65,4 +65,18 @@ public class Auction{
             }
         }
     }
+
+    public void finish(){
+        for(Lot lot : lots){
+            System.out.println(lot.getNumber() + ": " + lot.getDescription());
+            Bid bid = lot.getHighestBid();
+            if(bid != null){
+                System.out.println("Bidder: " + bid.getBidder().getName() + ", Amount bidden: " + bid.getValue());
+            }
+            else{
+                System.out.println("No bids placed on this lot!");
+            }
+        }
+    }
+
 }
