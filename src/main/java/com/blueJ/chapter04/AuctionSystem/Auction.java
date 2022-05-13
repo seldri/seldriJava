@@ -66,7 +66,7 @@ public class Auction{
         }
     }
 
-    public void finish(){
+    public void close(){
         for(Lot lot : lots){
             System.out.println(lot.getNumber() + ": " + lot.getDescription());
             Bid bid = lot.getHighestBid();
