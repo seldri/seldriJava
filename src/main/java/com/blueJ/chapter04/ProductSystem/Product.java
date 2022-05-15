@@ -45,7 +45,7 @@ public class Product{
      * @return the id, name and quantity in stock. 
     */
     public String toString(){
-        return id + ": " + name + " stock level: " + quantity;
+        return id + ": " + name + " / Stock level: " + quantity;
     }
 
     /**
