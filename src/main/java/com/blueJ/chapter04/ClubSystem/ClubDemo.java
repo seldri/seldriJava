@@ -7,7 +7,7 @@ public class ClubDemo{
     /**
      * Constructor of the class ClubDemo
      */
-    public Clubdemo(){
+    public ClubDemo(){
         club = new Club();
     }
 
@@ -18,5 +18,7 @@ public class ClubDemo{
     public void addMember(Membership member){
         club.join(member);
         System.out.println("The clubs has: " + club.numberOfMembers() + " members.");
+
+
     }
 }

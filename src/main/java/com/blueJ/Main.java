@@ -1,23 +1,27 @@
 package com.blueJ;
 
-import com.blueJ.chapter04.AuctionSystem.*;
+import com.blueJ.chapter04.ClubSystem.*;
     
 public class Main {
 
     public static void main(String[] args) {
 
-        Auction a1 = new Auction();
-        Person bob = new Person("Bob");
-        Person tim = new Person("Tim");
-        a1.enterLot("Hat");
-        a1.enterLot("Toy");
-        a1.enterLot("Shoes");
-        a1.enterLot("Jacket");
-        a1.makeABid(1, bob, 10);
-        a1.makeABid(1, tim, 15);
-        a1.makeABid(2, tim, 12);
-        a1.makeABid(3, bob, 8);
-        //a1.close();
-        System.out.println(a1.getLot(1).getDescription());
+        Club club1 = new Club();
+        Membership member1 = new Membership("Bob", 4, 2004);
+        Membership member2 = new Membership("Tom", 4, 2004);
+
+        Membership member3 = new Membership("Jim", 6, 2004);
+        Membership member4 = new Membership("Abe", 4, 2005);
+        Membership member5 = new Membership("Bob", 8, 2007);
+
+        club1.join(member1);
+        club1.join(member2);
+        club1.join(member3);
+        club1.join(member4);
+        club1.join(member5);
+
+        System.out.println(club1.numberOfMembers());
+        System.out.println(club1.remove(4, 2004));
+        System.out.println(club1.numberOfMembers());
     }
 } 
