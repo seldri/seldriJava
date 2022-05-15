@@ -4,9 +4,6 @@ import com.blueJ.chapter04.AuctionSystem.*;
     
 public class Main {
 
-    
-
-
     public static void main(String[] args) {
 
         Auction a1 = new Auction();
