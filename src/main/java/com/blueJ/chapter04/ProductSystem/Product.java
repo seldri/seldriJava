@@ -72,7 +72,7 @@ public class Product{
             quantity--;
         }
         else{
-            System.out.printlnl("Attempt to sell an out of stock item: " + name);
+            System.out.println("Attempt to sell an out of stock item: " + name);
         }
     }
 }

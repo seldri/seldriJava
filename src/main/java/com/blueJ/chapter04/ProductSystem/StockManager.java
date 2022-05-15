@@ -28,7 +28,6 @@ public class StockManager{
      * @param amount The amount to increase the quantity by.
      */
     public delivery(int id, int amount){
-
     }
 
     /**
