@@ -45,20 +45,6 @@ public class Lot{
         }
     }
 
-    /*public void placeNewBid(Bid newBid){
-        if(getHighestBid() == null){
-            highestBid = newBid;
-        }
-        else{
-            if(highestBid.getValue() > newBid.getValue()){
-                System.out.println("The new Bid must be higher than the current bid of: " + highestBid.getValue());
-            }
-            else {  highestBid = newBid;
-                    System.out.println("New Bid: " + highestBid.getValue() + " added.");
-            }
-        }
-    }*/
-
     public String toString(){
         String details = number + ": " + description;
         if(highestBid != null){
