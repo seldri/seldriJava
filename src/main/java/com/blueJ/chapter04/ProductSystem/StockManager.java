@@ -87,7 +87,6 @@ public class StockManager{
         }
     }
 
-
     public void printProductDetails2(){
         for(Product product : stock){
             System.out.println("ID: " + product.getID() + " / NAME: " + product.getName());
@@ -110,5 +109,4 @@ public class StockManager{
         }
         return null;
     }
-
 }
