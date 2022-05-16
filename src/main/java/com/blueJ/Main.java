@@ -1,26 +1,40 @@
 package com.blueJ;
 
-import com.blueJ.chapter04.ProductSystem.*;
+import java.util.ArrayList;
     
 public class Main {
 
     public static void main(String[] args) {
 
-        StockManager sm1 = new StockManager();
-
-        sm1.addProduct(new Product(1, "Shoe"));
-        sm1.addProduct(new Product(2, "Hat"));
-        sm1.addProduct(new Product(3, "Jacket"));
+       
+        ArrayList<Integer> a1 = new ArrayList<>();
         
-        //System.out.println(sm1.findProduct(2));
 
-        sm1.delivery(1, 2);
-        sm1.delivery(2, 5);
-        sm1.delivery(3, 6);
+        int day = 4;
 
-        sm1.addProduct(new Product(1, "Bob"));
-        //sm1.printProductDetails();
+        switch(day){
 
-        System.out.println(sm1.findProductName("Hat"));
+            case 1: System.out.println("Monday");
+                break;
+
+            case 2: System.out.println("Tuesday");
+                break;
+
+            case 3: System.out.println("Wednesday");
+                break;
+
+            case 4: System.out.println("Thursday");
+                break;
+
+            case 5: System.out.println("Friday");
+                break;
+
+            case 6: System.out.println("Saturday");
+                break;
+
+            case 7: System.out.println("Sunday");
+                break;
+        }
+        
     }
 } 
