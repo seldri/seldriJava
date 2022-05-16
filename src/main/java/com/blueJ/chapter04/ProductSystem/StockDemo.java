@@ -25,7 +25,7 @@ public class StockDemo{
         //Show details of all of the products
         manager.printProductDetails();
         //Take delivery of 5 items of one of the products
-        manager.delivery(2, 5);
+       // manager.delivery(2, 5);
         manager.printProductDetails();
     }
 
