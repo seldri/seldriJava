@@ -1,5 +1,6 @@
 package com.blueJ;
 
+<<<<<<< HEAD
 import com.blueJ.chapter04.ProductSystem.*;
     
 public class Main {
@@ -22,5 +23,20 @@ public class Main {
         //sm1.printProductDetails();
 
         System.out.println(sm1.findProductName("Hat"));
+=======
+<<<<<<< HEAD
+//import com.blueJ.chapter03.*;
+//import com.blueJ.chapter03.Clock.Clockdisplay;
+=======
+>>>>>>> main
+
+public class Main {
+
+<<<<<<< HEAD
+    
+    public static void main(String[] args) {
+=======
+>>>>>>> main
+>>>>>>> chapter05
     }
 } 
