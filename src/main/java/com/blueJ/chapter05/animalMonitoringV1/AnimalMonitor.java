@@ -66,7 +66,7 @@ public class AnimalMonitor{
     public void printEndangered(ArrayList<String> animalNames, int dangerThreshold){
         for(String animal : animalNames){
             if(getCount(animal) <= dangerThreshold){
-                System.out.println(animal + " is endangered.")
+                System.out.println(animal + " is endangered.");
             }
         }
     }
