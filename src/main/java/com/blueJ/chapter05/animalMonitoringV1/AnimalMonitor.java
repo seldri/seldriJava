@@ -28,9 +28,22 @@ public class AnimalMonitor{
      * Print details of all the sightings
      */
     public void printList(){
-        for(Sighting record : sightings){
-            System.out.println(record.getDetails());
+        for(Sighting sighting : sightings){
+            System.out.println(sighting.getDetails());
         }
+    }
+
+    public void printList2(){
+        sightings.forEach(
+            (Sighting sighting) ->
+            {
+                System.out.println(sighting.getDetails());
+            }
+        );
+    }
+
+    public void printList3(){
+        sightings.forEach(sighting -> System.out.println(sighting.getDetails()));
     }
 
     /**
