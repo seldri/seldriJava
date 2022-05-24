@@ -129,6 +129,11 @@ public class MusicOrganizer
         System.out.println();
     }
     
+    public void listAllTracks3()
+    {
+        tracks.stream().map(s -> s.getDetails()).forEach(detail -> System.out.println("Track listing: " + detail));
+    }
+
     public void listAllTracks2(){
         System.out.println("Track listing: ");
         Iterator<Track> it = tracks.iterator();
@@ -138,6 +143,11 @@ public class MusicOrganizer
         }
     }
     
+    public void listByArtist2(String artist){
+        tracks.stream().filter(s -> artist.equals(s.getArtist()))
+        .map(s -> s.getDetails()).forEach(detail -> System.out.println(detail));
+    }
+
     /**
      * List all tracks by the given artist.
      * @param artist The artist's name.
