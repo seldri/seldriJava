@@ -5,11 +5,13 @@ import java.util.Random;
 
 public class Responder {
     
+    private Random randomGenerator;
     private ArrayList<String> responseList;
     /**
      * Constructor of Responder
      */
     public Responder(){
+        randomGenerator = new Random();
         responseList = new ArrayList<>();
         generateResponseList();
     }
@@ -20,8 +22,7 @@ public class Responder {
      */
     public String generateResponse(){
         //return "That sound interesting. Tell me more...";
-        Random r1 = new Random();
-        return responseList.get(r1.nextInt(responseList.size()));
+        return responseList.get(randomGenerator.nextInt(responseList.size()));
     }
 
     public void generateResponseList(){
