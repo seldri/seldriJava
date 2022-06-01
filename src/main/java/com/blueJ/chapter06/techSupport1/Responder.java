@@ -1,34 +1,40 @@
 package com.blueJ.chapter06.techSupport1;
 
-import java.util.ArrayList;
 import java.util.Random;
+import java.util.ArrayList;
 
-public class Responder {
-    
+public class Responder{
+
     private Random randomGenerator;
-    private ArrayList<String> responseList;
-    /**
-     * Constructor of Responder
-     */
+    private ArrayList<String> responses;
+
     public Responder(){
         randomGenerator = new Random();
-        responseList = new ArrayList<>();
-        generateResponseList();
+        responses = new ArrayList<>();
+        fillResponses();
     }
 
     /**
-     * Generate a response
-     * @return A String that should be displayed as the response
+     * Get a random response out of the list.
+     * @return Random response out of the responses.
      */
     public String generateResponse(){
-        //return "That sound interesting. Tell me more...";
-        return responseList.get(randomGenerator.nextInt(responseList.size()));
+        return responses.get(randomGenerator.nextInt(responses.size()));
     }
 
-    public void generateResponseList(){
-        responseList.add("That sounds interesting. Tell me more...");
-        responseList.add("Have you tried restarting it?");
-        responseList.add("Have you updated the application?");
-        responseList.add("Somebody will contact you soon.");
+    /**
+     * Fill the list of responses.
+     */
+    public void fillResponses(){
+        responses.add("This sounds weird. Can you describe this more precise?");
+        responses.add("Until now no customer has complained about this. \n " + "Which system configuration do you have?");
+        responses.add("I need more precise answers.");
+        responses.add("Did you check if there is a conflict with DLL?");
+        responses.add("This is described in the manual. Did you read the manual?");
+        responses.add("This sounds too unprecise. Do you have an Expert \n " + "Which is near you?");
+        responses.add("This is no mistake, this is a system feature!");
+        responses.add("Could you describe it differently?");
+        responses.add("Did you try to use the app on your mobile phone?");
+        responses.add("I just checked on StackOverflow as well, there is also no solution.");
     }
 }
