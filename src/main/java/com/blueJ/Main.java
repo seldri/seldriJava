@@ -1,6 +1,9 @@
 package com.blueJ;
 
 <<<<<<< HEAD
+
+=======
+<<<<<<< HEAD
 import com.blueJ.chapter04.ProductSystem.*;
     
 public class Main {
@@ -29,14 +32,19 @@ public class Main {
 //import com.blueJ.chapter03.Clock.Clockdisplay;
 =======
 >>>>>>> main
+>>>>>>> c021fc1bb6772410bccba6c244ccb92c3e44e8c5
 
 public class Main {
 
-<<<<<<< HEAD
     
     public static void main(String[] args) {
+<<<<<<< HEAD
+    
+       
+=======
 =======
 >>>>>>> main
 >>>>>>> chapter05
+>>>>>>> c021fc1bb6772410bccba6c244ccb92c3e44e8c5
     }
 } 
