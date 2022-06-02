@@ -1,5 +1,7 @@
 package com.blueJ.chapter06.techSupport1;
 
+import java.util.HashSet;
+
 public class SupportSystem {
     
     private InputReader reader;
@@ -24,13 +26,13 @@ public class SupportSystem {
         printWelcome();
 
         while(!finished){
-            String input = reader.getInput().trim().toLowerCase();
-
-            if(input.equals("bye")){
+            //String input = reader.getInput().trim().toLowerCase();
+            HashSet<String> input = reader.getInput();
+            if(input.contains("bye")){
                 finished = true;
             }
             else{
-                String response = responder.generateResponse();
+                String response = responder.generateResponse(input);
                 System.out.println(response);
             }
         }
