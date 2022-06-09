@@ -1,4 +1,4 @@
-package com.blueJ.chapter06.bouncing-balls;
+package com.blueJ.chapter06.bouncingBalls;
 
 import java.awt.Color;
 
@@ -40,7 +40,7 @@ public class BallDemo
             myCanvas.wait(50);           // small delay
                 ball.move();
                 ball2.move();
-            // stop once ball has travelled a certain distance on x axis
+            // stop once ball has traveled a certain distance on x axis
             if(ball.getXPosition() >= 550 || ball2.getXPosition() >= 550) {
                 finished = true;
             }
@@ -73,7 +73,7 @@ public class BallDemo
             myCanvas.wait(50);           // small delay
                 ball.move();
                 ball2.move();
-            // stop once ball has travelled a certain distance on x axis
+            // stop once ball has traveled a certain distance on x axis
             if(ball.getXPosition() >= 550 || ball2.getXPosition() >= 550) {
                 finished = true;
             }

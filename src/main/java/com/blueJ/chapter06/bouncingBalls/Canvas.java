@@ -1,4 +1,4 @@
-package com.blueJ.chapter06.bouncing-balls;
+package com.blueJ.chapter06.bouncingBalls;
 
 import javax.swing.*;
 import java.awt.*;
@@ -39,7 +39,7 @@ public class Canvas
      * @param title  title to appear in Canvas Frame
      * @param width  the desired width for the canvas
      * @param height  the desired height for the canvas
-     * @param bgClour  the desired background color of the canvas
+     * @param bgColor  the desired background color of the canvas
      */
     public Canvas(String title, int width, int height, Color bgColor)
     {

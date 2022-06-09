@@ -1,4 +1,4 @@
-package com.blueJ.chapter06.bouncing-balls;
+package com.blueJ.chapter06.bouncingBalls;
 
 import java.awt.*;
 import java.awt.geom.*;
