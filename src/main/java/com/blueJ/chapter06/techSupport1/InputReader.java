@@ -19,9 +19,16 @@ public class InputReader {
      * and return it as a String.
      * @return A String typed by the user.
      */
-    public String getInput(){
+    public HashSet<String> getInput(){
         System.out.print("> ");     //print prompt
-        String inputLine = reader.nextLine();
-        return inputLine;
+        String inputLine = reader.nextLine().trim().toLowerCase();
+        
+        String[] words = inputLine.split(" ");
+
+        HashSet<String> inputSet = new HashSet<>();
+        for(String word : words){
+            inputSet.add(word);
+        }
+        return inputSet;
     }
 }
