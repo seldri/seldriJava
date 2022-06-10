@@ -1,7 +1,7 @@
 package com.blueJ.chapter06.bouncingBalls;
 
 import java.awt.*;
-import java.awt.geom.*;
+//import java.awt.geom.*;
 
 
 public class BouncingBall
@@ -9,7 +9,7 @@ public class BouncingBall
     private static final int GRAVITY = 3;  // effect of gravity
 
     private int ballDegradation = 2;
-    private Ellipse2D.Double circle;
+    //private Ellipse2D.Double circle;
     private Color color;
     private int diameter;
     private int xPosition;

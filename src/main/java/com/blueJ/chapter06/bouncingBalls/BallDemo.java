@@ -9,6 +9,7 @@ import java.util.Random;
 public class BallDemo   
 {
     private Canvas myCanvas;
+    private ArrayList<Color> colorList;
 
     /**
      * Create a BallDemo object. Creates a fresh canvas and makes it visible.
@@ -16,6 +17,14 @@ public class BallDemo
     public BallDemo()
     {
         myCanvas = new Canvas("Ball Demo", 600, 500);
+        colorList = new ArrayList<>();
+        colorList.add(Color.BLUE);
+        colorList.add(Color.RED);
+        colorList.add(Color.MAGENTA);
+        colorList.add(Color.CYAN);
+        colorList.add(Color.ORANGE);
+        colorList.add(Color.BLACK);
+        colorList.add(Color.GREEN);
     }
 
     /**
@@ -75,14 +84,6 @@ public class BallDemo
 
         //Create HashSet with balls
 
-        ArrayList<Color> colorList = new ArrayList<>();
-        colorList.add(Color.BLUE);
-        colorList.add(Color.RED);
-        colorList.add(Color.MAGENTA);
-        colorList.add(Color.CYAN);
-        colorList.add(Color.ORANGE);
-        colorList.add(Color.BLACK);
-        colorList.add(Color.GREEN);
 
         Random r1 = new Random();
 
@@ -127,4 +128,39 @@ public class BallDemo
             // stop once ball has traveled a certain distance on x axis
         }
     }
+
+    public void boxBounce(int numberOfBalls){
+        myCanvas.setVisible(true);
+        Random r1 = new Random();
+        //draw the box
+        myCanvas.setForegroundColor(Color.PINK);
+        myCanvas.fillRectangle(20, 20, 560, 460);
+        myCanvas.setForegroundColor(Color.white);
+        myCanvas.fillRectangle(25, 25, 550, 450);
+        int ground = 25 + 450;
+        int leftWall = 25;
+        int rightWall = 25 + 550;
+
+        HashSet<BoxBall> balls = new HashSet<>();
+        for(int i = 0; i <numberOfBalls; i++){
+            balls.add(new BoxBall(50 + r1.nextInt(250), 10 + r1.nextInt(80), 16 + (i*4), colorList.get(r1.nextInt(colorList.size())), ground, leftWall, rightWall, myCanvas));
+        }
+
+        balls.forEach(BoxBall::draw);
+
+        boolean finished = false;
+        while(!finished){
+            myCanvas.wait(50);
+            //finished = true;
+            for(BoxBall ball : balls){
+                ball.move();
+
+                if(ball.getyPosition() < (ground - ball.getDiameter())){
+                    finished = false;
+                }
+
+            }
+        }
+    }
+
 }
