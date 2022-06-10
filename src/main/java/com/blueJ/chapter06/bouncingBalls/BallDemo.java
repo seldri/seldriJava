@@ -1,3 +1,5 @@
+package com.blueJ.chapter06.BouncingBalls;
+
 import java.awt.Color;
 import java.util.ArrayList;
 import java.util.HashSet;
