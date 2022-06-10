@@ -1,17 +1,10 @@
-package com.blueJ.chapter06.BouncingBalls;
+package com.blueJ.chapter06.bouncingBalls;
 
 import java.awt.Color;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Random;
 
-/**
- * Class BallDemo - a short demonstration showing animation with the 
- * Canvas class. 
- *
- * @author Michael Kölling and David J. Barnes
- * @version 2016.02.29
- */
 
 public class BallDemo   
 {
@@ -50,7 +43,7 @@ public class BallDemo
             myCanvas.wait(50);           // small delay
                 ball.move();
                 ball2.move();
-            // stop once ball has travelled a certain distance on x axis
+            // stop once ball has traveled a certain distance on x axis
             if(ball.getXPosition() >= 550 || ball2.getXPosition() >= 550) {
                 finished = true;
             }
