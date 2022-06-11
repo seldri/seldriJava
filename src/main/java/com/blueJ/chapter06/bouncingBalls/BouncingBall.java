@@ -6,7 +6,7 @@ import java.awt.*;
 
 public class BouncingBall
 {
-    private static final int GRAVITY = 3;  // effect of gravity
+    private static final int GRAVITY = 1;  // effect of gravity
 
     private int ballDegradation = 2;
     //private Ellipse2D.Double circle;
