@@ -1,7 +1,7 @@
 package com.blueJ;
 
 
-import com.blueJ.chapter06.starWars.*;
+
 
 public class Main {
 
@@ -21,7 +21,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-      //NameGenerator.generateStarWarsName("Selimaj", "Drini", "Berisha", "Münsterlingen");
+      
       
       //Main.printInCapital("hello");
       int a = 2;
