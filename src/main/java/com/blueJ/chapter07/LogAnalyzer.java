@@ -49,6 +49,7 @@ public class LogAnalyzer
         while(reader.hasNext()){
             LogEntry entry = reader.next();
             int day = entry.getDay();
+            dailyCounts[day]++;
 
         }
     }

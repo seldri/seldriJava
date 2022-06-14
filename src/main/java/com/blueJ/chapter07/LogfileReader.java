@@ -72,7 +72,7 @@ public class LogfileReader implements Iterator<LogEntry>
         Collections.sort(entries);
         reset();
     }
-    
+
     /**
      * Does the reader have more data to supply?
      * @return true if there is more data available,
