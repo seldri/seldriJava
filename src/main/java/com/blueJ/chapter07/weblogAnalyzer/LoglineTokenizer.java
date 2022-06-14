@@ -1,4 +1,4 @@
-package com.blueJ.chapter07;
+package com.blueJ.chapter07.weblogAnalyzer;
 import java.util.Scanner;
 
 public class LoglineTokenizer

@@ -1,4 +1,4 @@
-package com.blueJ.chapter07;
+package com.blueJ.chapter07.weblogAnalyzer;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.net.URISyntaxException;
