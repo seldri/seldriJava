@@ -14,15 +14,32 @@ public class Automaton
      * Create a 1D automaton consisting of the given number of cells.
      * @param numberOfCells The number of cells in the automaton.
      */
-    public Automaton(int numberOfCells)
+    public Automaton(int numberOfCells, int wolframCode)
     {
         this.numberOfCells = numberOfCells;
         state = new int[numberOfCells + 1];
+
+        state = computeTable(wolframCode);
         // Seed the automaton with a single 'on' cell in the middle.
         state[numberOfCells / 2] = 1;
         //state[numberOfCells / 4] = 1;
     }
     
+    public int[] computeTable(int wolframCode){
+        int[] computeTable = new int[8];
+        for(int i = 0; i < computeTable.length; i++){
+            if(wolframCode % 2 == 0){
+                computeTable[i] = 0;
+                wolframCode = wolframCode / 2;
+            }
+            else{
+                computeTable[i] = 1;
+                wolframCode = wolframCode / 2;
+            }
+        }
+        return computeTable;
+    }
+
     /**
      * Print the current state of the automaton.
      */

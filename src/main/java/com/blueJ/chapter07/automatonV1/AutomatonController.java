@@ -11,9 +11,9 @@ public class AutomatonController
      * Create an AutomatonController.
      * @param numberOfCells The number of cells in the automaton.
      */
-    public AutomatonController(int numberOfCells)
+    public AutomatonController(int numberOfCells, int wolframCode)
     {
-        auto = new Automaton(numberOfCells);
+        auto = new Automaton(numberOfCells, wolframCode);
         auto.print();
     }
     
@@ -21,10 +21,11 @@ public class AutomatonController
      * Create an AutomatonController with
      * a default number of cells.
      */
-    public AutomatonController()
+    /*public AutomatonController()
     {
         this(15);
-    }
+        this(146);
+    }*/
     
     /**
      * Run the automaton for the given number of steps.
