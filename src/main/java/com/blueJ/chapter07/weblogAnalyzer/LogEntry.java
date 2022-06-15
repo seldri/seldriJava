@@ -1,4 +1,4 @@
-package com.blueJ.chapter07;
+package com.blueJ.chapter07.weblogAnalyzer;
 import java.util.Calendar;
 
 
@@ -74,6 +74,30 @@ public class LogEntry implements Comparable<LogEntry>
         return dataValues[MINUTE];
     }
     
+    /**
+     * return the year
+     * @return The day field from the log line.
+     */
+    public int getYear(){
+        return dataValues[YEAR];
+    }
+
+    /**
+     * return the month
+     * @return The month field from the log line.
+     */
+    public int getMonth(){
+        return dataValues[MONTH];
+    }
+
+    /**
+     * return the day
+     * @return The day field from the log line.
+     */
+    public int getDay(){
+        return dataValues[DAY];
+    }
+
     /**
      * Create a string representation of the data.
      * This is not necessarily identical with the

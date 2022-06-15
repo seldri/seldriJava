@@ -1,4 +1,4 @@
-package com.blueJ.chapter07;
+package com.blueJ.chapter07.weblogAnalyzer;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.net.URISyntaxException;
@@ -72,7 +72,7 @@ public class LogfileReader implements Iterator<LogEntry>
         Collections.sort(entries);
         reset();
     }
-    
+
     /**
      * Does the reader have more data to supply?
      * @return true if there is more data available,
