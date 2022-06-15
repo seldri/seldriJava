@@ -11,9 +11,9 @@ import java.util.*;
 public class Cell
 {
     // The possible states.
-    public static final int ALIVE = 0, DEAD = 1, DYING = 2;
+    public static final int ALIVE = 0, DEAD = 1;//, DYING = 2;
     // The number of possible states.
-    public static final int NUM_STATES = 3;
+    public static final int NUM_STATES = 2;//3;
 
     // The cell's state.
     private int state;
@@ -44,7 +44,7 @@ public class Cell
      * This is an implementation of the rules for Brian's Brain.
      * @return The next state.
      */
-    public int getNextState()
+    /*public int getNextState()
     {
         if(state == DEAD) {
             // Count the number of neighbors that are alive.
@@ -62,8 +62,36 @@ public class Cell
         else {
             return DYING;
         }
-    }
+    }*/
     
+    public int getNextState()
+    {
+        if(state == DEAD) {
+            // Count the number of neighbors that are alive.
+            int aliveCount = 0;
+            for(Cell n : neighbors) {
+                if(n.getState() == ALIVE) {
+                    aliveCount++;
+                }
+            }
+            return aliveCount == 3 ? ALIVE : DEAD;
+        }
+        
+        else {
+            int aliveCount = 0;
+            for(Cell n : neighbors){
+                if(n.getState() == ALIVE){
+                    aliveCount++;
+                }
+            }
+            //if(aliveCount < 2 || aliveCount > 3){
+            //    return DEAD;
+            //}
+            //return ALIVE;
+            return aliveCount == 2 || aliveCount == 3 ? ALIVE : DEAD;
+        }
+    }
+
     /**
      * Receive the list of neighboring cells and take
      * a copy.
