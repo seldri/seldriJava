@@ -20,12 +20,6 @@ public class Main {
         //int[][] tom = new int[5][5];
         //System.arraycopy(bob, 0, tom, 0, bob.length);
 
-
-        for(int i = 1; i < 26; i++){
-            System.out.println(i*i);
-        }
-
-
     }
 }
 
