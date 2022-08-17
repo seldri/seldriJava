@@ -20,6 +20,7 @@ public class Main {
         //int[][] tom = new int[5][5];
         //System.arraycopy(bob, 0, tom, 0, bob.length);
 
+        System.out.println("Hello World");
     }
 }
 
