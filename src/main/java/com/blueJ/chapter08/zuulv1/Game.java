@@ -72,4 +72,6 @@ public class Game{
         System.out.println();
     }
 
+    private boolean processCommand(Command command){}
+
 }
