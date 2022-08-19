@@ -11,7 +11,8 @@ public class Game{
     }
 
     public void createRooms(){
-        Room park, police, hills, hospital, bikeshop, fields, school, creek, railstation, factory, suburbs;
+        Room center, park, police, hills, hospital, bikeshop, fields, school, creek, railstation, factory, suburbs;
+        center = new Room("At the town square");
         park = new Room("next to the school");
         police = new Room("close to the hills");
         hospital = new Room("behind the police");
@@ -24,7 +25,8 @@ public class Game{
         bikeshop = new Room("In the northern centre");
         fields = new Room("In the north");
 
-        park.setExits(null, police, null, school);
+        center.setExits(null, null, park, null);
+        park.setExits(center, police, null, school);
         police.setExits(hospital, hills, null, park);
         hospital.setExits(null, null, police, bikeshop);
         hills.setExits(null, null, null, police);
@@ -35,6 +37,8 @@ public class Game{
         suburbs.setExits(null, factory, null, null);
         bikeshop.setExits(fields, hospital, school, factory);
         fields.setExits(null, null, bikeshop, null);
+
+        currentRoom = railstation;
     }
 
     public void play(){
