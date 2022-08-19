@@ -20,7 +20,7 @@ public class Game{
         creek = new Room("below the park");
         railstation = new Room("West of the school");
         factory = new Room("North of the railstation");
-        suburbs = new Room("On the western edge);
+        suburbs = new Room("On the western edge");
         bikeshop = new Room("In the northern centre");
         fields = new Room("In the north");
 
