@@ -2,11 +2,11 @@ package com.blueJ.chapter08.zuulv1;
 
 public class Room{
 
-    public String description;
-    public Room northExit;
-    public Room eastExit;
-    public Room southExit;
-    public Room westExit;
+    private String description;
+    private Room northExit;
+    private Room eastExit;
+    private Room southExit;
+    private Room westExit;
 
     public Room(String description){
         this.description = description;
@@ -45,6 +45,23 @@ public class Room{
         if(west != null){
             westExit = west;
         }
+    }
+
+    public void getExitListString(){
+        System.out.println("******************");
+        if(northExit != null){
+            System.out.println("North: " + northExit);
+        }
+        if(westExit != null){
+            System.out.println("West: " + westExit);
+        }
+        if(southExit != null){
+            System.out.println("South" + southExit);
+        }
+        if(eastExit != null){
+            System.out.println("East: " + eastExit);
+        }
+        System.out.println("******************");
     }
     
 
