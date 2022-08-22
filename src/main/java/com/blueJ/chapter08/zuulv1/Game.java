@@ -112,40 +112,6 @@ public class Game{
         }
     }
 
-    // private void goRoom(Command command) 
-    // {
-    //     if(!command.hasSecondWord()) {
-    //         // if there is no second word, we don't know where to go...
-    //         System.out.println("Go where?");
-    //         return;
-    //     }
-    //     String direction = command.getSecondWord();
-    //     // Try to leave current room.
-    //     Room nextRoom = null;
-    //     if(direction.equals("north")) {
-    //         nextRoom = currentRoom.northExit;
-    //     }
-    //     if(direction.equals("east")) {
-    //         nextRoom = currentRoom.eastExit;
-    //     }
-    //     if(direction.equals("south")) {
-    //         nextRoom = currentRoom.southExit;
-    //     }
-    //     if(direction.equals("west")) {
-    //         nextRoom = currentRoom.westExit;
-    //     }
-
-    //     if (nextRoom == null) {
-    //         System.out.println("There is no door!");
-    //     }
-    //     else {
-    //         currentRoom = nextRoom;
-    //         getRoomInformation();
-    //     }
-    // }
-
-
-
     public void getRoomInformation(){
                 System.out.println("You are " + currentRoom.getDescription());
         System.out.print("Exits: ");
