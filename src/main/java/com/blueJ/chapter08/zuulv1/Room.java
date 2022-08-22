@@ -32,4 +32,9 @@ public class Room{
         }
         return result;
     }
+
+    public String getLongDescription(){
+        return "You are " + description + ".\n" + getExitListString(); 
+    }
+
 }

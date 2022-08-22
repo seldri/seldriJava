@@ -138,9 +138,8 @@ public class Game{
     }
 
     public void getRoomInformation(){
-        System.out.println("You are " + currentRoom.getDescription());
-        System.out.print("Exits: ");
-        //currentRoom.getExitListString();
+        System.out.println("You are " + currentRoom.getLongDescription());
+        // currentRoom.getExitListString();
     }
 
     private boolean quit(Command command) 
