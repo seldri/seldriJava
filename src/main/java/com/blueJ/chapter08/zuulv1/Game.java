@@ -25,18 +25,43 @@ public class Game{
         bikeshop = new Room("In the northern centre");
         fields = new Room("In the north");
 
-        center.setExits(null, null, park, null);
-        park.setExits(center, police, null, school);
-        police.setExits(hospital, hills, null, park);
-        hospital.setExits(null, null, police, bikeshop);
-        hills.setExits(null, null, null, police);
-        school.setExits(bikeshop, park, creek, railstation);
-        creek.setExits(school, null, null, null);
-        railstation.setExits(factory, school, null, null);
-        factory.setExits(null, bikeshop, railstation, suburbs);
-        suburbs.setExits(null, factory, null, null);
-        bikeshop.setExits(fields, hospital, school, factory);
-        fields.setExits(null, null, bikeshop, null);
+        center.setExits("south", park);
+
+        park.setExits("north", center);
+        park.setExits("east", police);
+        park.setExits("west", school);
+        
+        police.setExits("north", hospital);
+        police.setExits("east", hills);
+        police.setExits("west", park);
+
+        hospital.setExits("south", police);
+        hospital.setExits("west", bikeshop);
+
+        hills.setExits("west", police);
+
+        school.setExits("north", bikeshop);
+        school.setExits("east", park);
+        school.setExits("south", creek);
+        school.setExits("west", railstation);
+
+        creek.setExits("north", school);
+
+        railstation.setExits("north", factory);
+        railstation.setExits("east", school);
+
+        factory.setExits("east", bikeshop);
+        factory.setExits("south", railstation);
+        factory.setExits("west", suburbs);
+
+        suburbs.setExits("east", factory);
+
+        bikeshop.setExits("north", fields);
+        bikeshop.setExits("east", hospital);
+        bikeshop.setExits("south", school);
+        bikeshop.setExits("west", factory);
+
+        fields.setExits("south", bikeshop);
 
         currentRoom = railstation;
     }
@@ -115,7 +140,7 @@ public class Game{
     public void getRoomInformation(){
         System.out.println("You are " + currentRoom.getDescription());
         System.out.print("Exits: ");
-        currentRoom.getExitListString();
+        //currentRoom.getExitListString();
     }
 
     private boolean quit(Command command) 
