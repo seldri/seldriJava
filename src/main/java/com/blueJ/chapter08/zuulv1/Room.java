@@ -1,5 +1,6 @@
 package com.blueJ.chapter08.zuulv1;
 import java.util.HashMap;
+import java.util.Set;
 
 public class Room{
 
@@ -23,20 +24,12 @@ public class Room{
         return exits.get(direction);
     }
 
-    // public void getExitListString(){
-    //     System.out.println("******************");
-    //     if(northExit != null){
-    //         System.out.println("North: " + northExit);
-    //     }
-    //     if(westExit != null){
-    //         System.out.println("West: " + westExit);
-    //     }
-    //     if(southExit != null){
-    //         System.out.println("South" + southExit);
-    //     }
-    //     if(eastExit != null){
-    //         System.out.println("East: " + eastExit);
-    //     }
-    //     System.out.println("******************");
-    // }
+    public String getExitListString(){
+        String result = "Exits: ";
+        Set<String> keys = exits.keySet();
+        for(String exit : keys){
+            result += " " + exit; 
+        }
+        return result;
+    }
 }
