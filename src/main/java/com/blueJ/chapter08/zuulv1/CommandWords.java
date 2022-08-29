@@ -6,9 +6,7 @@ public class CommandWords{
         "go", "quit", "help", "look", "eat"
     };
 
-    public CommandWords(){
-
-    }
+    public CommandWords(){}
 
     public boolean isCommand(String aString){
         for(int i = 0; i < validCommands.length; i++){
@@ -16,5 +14,12 @@ public class CommandWords{
                 return true;
         }
         return false;
+    }
+
+    public void printAll(){
+        for(String command : validCommands){
+            System.out.println(command + " ");
+        }
+        System.out.println();
     }
 }

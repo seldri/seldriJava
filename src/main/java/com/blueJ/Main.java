@@ -1,5 +1,5 @@
 package com.blueJ;
-import java.lang.System;
+// import java.lang.System;
 
 import com.blueJ.chapter08.zuulv1.Game;
 
@@ -17,4 +17,3 @@ public class Main {
         g1.getRoomInformation();
     }
 }
-
