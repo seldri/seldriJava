@@ -1,15 +1,19 @@
 package com.blueJ.chapter08.zuulv1;
 
+import java.util.Stack;
+
 public class Game{
 
     private Parser parser;
     private Room currentRoom;
-    private Room previousRoom;
+    //private Room previousRoom;
+    private Stack<Room> previousRooms;
 
     public Game(){
         createRooms();
         parser = new Parser();
-        previousRoom = null;
+        //previousRoom = null;
+        previousRooms = new Stack<>();
     }
 
     public void createRooms(){
@@ -151,23 +155,34 @@ public class Game{
             System.out.println("There is no door!");
         }
         else {
-            previousRoom = currentRoom;
+            //previousRoom = currentRoom;
+            previousRooms.push(currentRoom);
             currentRoom = nextRoom;
             getRoomInformation();
         }
     }
 
+    // public void getBack(){
+    //     if(previousRoom != null){
+    //         Room tmp = currentRoom;
+    //         currentRoom = previousRoom;
+    //         previousRoom = tmp;
+    //         System.out.println("You went back to the previous Room!");
+    //         System.out.println("\n");
+    //         System.out.println("Your current room is: " + currentRoom.getLongDescription());
+    //     }
+    //     else {
+    //         System.out.println("You are in the first room!");
+    //     }
+    // }
+
     public void getBack(){
-        if(previousRoom != null){
-            Room tmp = currentRoom;
-            currentRoom = previousRoom;
-            previousRoom = tmp;
-            System.out.println("You went back to the previous Room!");
-            System.out.println("\n");
-            System.out.println("Your current room is: " + currentRoom.getLongDescription());
+        if(previousRooms.empty()){
+            System.out.println("You are at the first room!");
         }
-        else {
-            System.out.println("You are in the first room!");
+        else{
+            currentRoom = previousRooms.pop();
+            System.out.println(currentRoom.getLongDescription());
         }
     }
 
