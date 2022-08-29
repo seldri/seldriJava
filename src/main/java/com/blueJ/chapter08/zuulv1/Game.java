@@ -129,7 +129,8 @@ public class Game{
         System.out.println();
         System.out.println("Your command words are:");
         // System.out.println("   go quit help");
-        parser.showCommands();
+        // parser.showCommands();
+        System.out.println(parser.getCommands());
     }
 
     private void goRoom(Command command) 

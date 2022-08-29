@@ -6,10 +6,18 @@ public class Room{
 
     private String description;
     private HashMap<String, Room> exits;
+    private Item item;
 
     public Room(String description){
         this.description = description;
         exits = new HashMap<>();
+        item = new Item("", "");
+    }
+
+    public Room(String description, String itemDescription, String itemWeight){
+        this.description = description;
+        exits = new HashMap<>();
+        item = new Item(itemDescription, itemWeight);
     }
 
     public String getDescription(){
@@ -34,7 +42,7 @@ public class Room{
     }
 
     public String getLongDescription(){
-        return "You are " + description + ".\n" + getExitListString(); 
+        return "You are " + description + ".\n" + getExitListString() + "\n" + item.getItemInfo(); 
     }
 
 }

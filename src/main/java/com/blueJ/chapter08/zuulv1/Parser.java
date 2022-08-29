@@ -40,7 +40,11 @@ public class Parser{
         }
     }
 
-    public void showCommands(){
-        commands.printAll();
+    // public void showCommands(){
+    //     commands.printAll();
+    // }
+
+    public String getCommands(){
+        return commands.getAll();
     }
 }

@@ -16,10 +16,19 @@ public class CommandWords{
         return false;
     }
 
-    public void printAll(){
+    // public void printAll(){
+    //     for(String command : validCommands){
+    //         System.out.println(command + " ");
+    //     }
+    //     System.out.println();
+    // }
+
+    public String getAll(){
+        String a = "";
         for(String command : validCommands){
-            System.out.println(command + " ");
+            a += command + ", ";
         }
-        System.out.println();
+        return a;
     }
+
 }
