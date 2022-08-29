@@ -3,7 +3,7 @@ package com.blueJ.chapter08.zuulv1;
 public class CommandWords{
 
     private static final String[] validCommands = {
-        "go", "quit", "help", "look", "eat"
+        "go", "quit", "help", "look", "eat", "back"
     };
 
     public CommandWords(){}
@@ -15,13 +15,6 @@ public class CommandWords{
         }
         return false;
     }
-
-    // public void printAll(){
-    //     for(String command : validCommands){
-    //         System.out.println(command + " ");
-    //     }
-    //     System.out.println();
-    // }
 
     public String getAll(){
         String a = "";
