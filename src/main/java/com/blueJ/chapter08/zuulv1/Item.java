@@ -5,7 +5,6 @@ public class Item{
     private String description;
     private String weight;
 
-
     public Item(String description, String weight){
         this.description = description;
         this.weight = weight;
