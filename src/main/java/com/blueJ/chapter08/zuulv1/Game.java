@@ -77,6 +77,14 @@ public class Game{
         System.out.println("Thank you for playing. Goodbye.");
     }
 
+    public void lookAround(){
+        System.out.println(currentRoom.getLongDescription());
+    }
+
+    public void eat(){
+        System.out.println("You have now eaten and are not hungry anymore!");
+    }
+
     private void printWelcome()
     {
         System.out.println();
@@ -99,8 +107,14 @@ public class Game{
         if(commandWord.equals("help")){
             printHelp();
         }
-        else if(commandWord.equals("go")){
+        else if(commandWord.equals("go")){ 
             goRoom(command);
+        }
+        else if(commandWord.equals("look")){
+            lookAround();
+        }
+        else if(commandWord.equals("eat")){
+            eat();
         }
         else if(commandWord.equals("quit")){
             wantToQuit = quit(command);
