@@ -3,12 +3,10 @@ package com.blueJ.chapter08.zuulv1;
 public class CommandWords{
 
     private static final String[] validCommands = {
-        "go", "quit", "help"
+        "go", "quit", "help", "look", "eat"
     };
 
-    public CommandWords(){
-
-    }
+    public CommandWords(){}
 
     public boolean isCommand(String aString){
         for(int i = 0; i < validCommands.length; i++){
@@ -17,4 +15,20 @@ public class CommandWords{
         }
         return false;
     }
+
+    // public void printAll(){
+    //     for(String command : validCommands){
+    //         System.out.println(command + " ");
+    //     }
+    //     System.out.println();
+    // }
+
+    public String getAll(){
+        String a = "";
+        for(String command : validCommands){
+            a += command + ", ";
+        }
+        return a;
+    }
+
 }
