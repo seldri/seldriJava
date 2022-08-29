@@ -4,10 +4,12 @@ public class Game{
 
     private Parser parser;
     private Room currentRoom;
+    private Room previousRoom;
 
     public Game(){
         createRooms();
         parser = new Parser();
+        previousRoom = null;
     }
 
     public void createRooms(){
@@ -116,6 +118,9 @@ public class Game{
         else if(commandWord.equals("eat")){
             eat();
         }
+        else if(commandWord.equals("back")){
+            getBack();
+        }
         else if(commandWord.equals("quit")){
             wantToQuit = quit(command);
         }
@@ -128,8 +133,6 @@ public class Game{
         System.out.println("around at the university.");
         System.out.println();
         System.out.println("Your command words are:");
-        // System.out.println("   go quit help");
-        // parser.showCommands();
         System.out.println(parser.getCommands());
     }
 
@@ -148,14 +151,28 @@ public class Game{
             System.out.println("There is no door!");
         }
         else {
+            previousRoom = currentRoom;
             currentRoom = nextRoom;
             getRoomInformation();
         }
     }
 
+    public void getBack(){
+        if(previousRoom != null){
+            Room tmp = currentRoom;
+            currentRoom = previousRoom;
+            previousRoom = tmp;
+            System.out.println("You went back to the previous Room!");
+            System.out.println("\n");
+            System.out.println("Your current room is: " + currentRoom.getLongDescription());
+        }
+        else {
+            System.out.println("You are in the first room!");
+        }
+    }
+
     public void getRoomInformation(){
         System.out.println("You are " + currentRoom.getLongDescription());
-        // currentRoom.getExitListString();
     }
 
     private boolean quit(Command command) 

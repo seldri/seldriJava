@@ -2,22 +2,22 @@ package com.blueJ.chapter08.zuulv1;
 import java.util.HashMap;
 import java.util.Set;
 
+import java.util.ArrayList;
+
 public class Room{
 
     private String description;
     private HashMap<String, Room> exits;
-    private Item item;
+    private ArrayList<Item> itemList;
 
     public Room(String description){
         this.description = description;
         exits = new HashMap<>();
-        item = new Item("", "");
+        itemList = new ArrayList<>();
     }
 
-    public Room(String description, String itemDescription, String itemWeight){
-        this.description = description;
-        exits = new HashMap<>();
-        item = new Item(itemDescription, itemWeight);
+    public void placeItem(String description, String weight){
+        itemList.add(new Item(description, weight));
     }
 
     public String getDescription(){
@@ -42,7 +42,14 @@ public class Room{
     }
 
     public String getLongDescription(){
-        return "You are " + description + ".\n" + getExitListString() + "\n" + item.getItemInfo(); 
+        return "You are " + this.description + ".\n" + getExitListString() + "\n" + getItemsInfo();
     }
 
+    public String getItemsInfo(){
+        String items = "";
+        for(Item item : itemList){
+            items += item.getItemInfo() + "\n";
+        }
+        return items;
+    }
 }
