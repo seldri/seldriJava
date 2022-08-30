@@ -1,15 +1,21 @@
 package com.blueJ.chapter08.zuulv1;
 
+import java.util.Stack;
+
 public class Game{
 
     private Parser parser;
-    private Room currentRoom;
-    private Room previousRoom;
+    //private Room currentRoom;
+    //private Room previousRoom;
+    private Stack<Room> previousRooms;
+
+    private Player player;
 
     public Game(){
         createRooms();
         parser = new Parser();
-        previousRoom = null;
+        //previousRoom = null;
+        previousRooms = new Stack<>();
     }
 
     public void createRooms(){
@@ -65,7 +71,8 @@ public class Game{
 
         fields.setExits("south", bikeshop);
 
-        currentRoom = railstation;
+        player = new Player("Bob", railstation);
+        //currentRoom = railstation;
     }
 
     public void play(){
@@ -80,8 +87,8 @@ public class Game{
     }
 
     public void lookAround(){
-        System.out.println(currentRoom.getLongDescription());
-    }
+             System.out.println(player.getCurrentRoom().getLongDescription());
+        }
 
     public void eat(){
         System.out.println("You have now eaten and are not hungry anymore!");
@@ -121,6 +128,18 @@ public class Game{
         else if(commandWord.equals("back")){
             getBack();
         }
+        else if(commandWord.equals("take")){
+            take(command);
+        }
+        else if(commandWord.equals("drop")){
+            drop(command);
+        }
+        else if(commandWord.equals("items")){
+            items();
+        }
+        else if(commandWord.equals("cookie")){
+            cookieEat();
+        }
         else if(commandWord.equals("quit")){
             wantToQuit = quit(command);
         }
@@ -144,35 +163,30 @@ public class Game{
             return;
         }
         String direction = command.getSecondWord();
-        
-        Room nextRoom = currentRoom.getExit(direction);
 
+        Room nextRoom = player.getCurrentRoom().getExit(direction);
         if (nextRoom == null) {
             System.out.println("There is no door!");
         }
         else {
-            previousRoom = currentRoom;
-            currentRoom = nextRoom;
+            previousRooms.push(player.getCurrentRoom());
+            player.setCurrentRoom(nextRoom);
             getRoomInformation();
         }
     }
 
     public void getBack(){
-        if(previousRoom != null){
-            Room tmp = currentRoom;
-            currentRoom = previousRoom;
-            previousRoom = tmp;
-            System.out.println("You went back to the previous Room!");
-            System.out.println("\n");
-            System.out.println("Your current room is: " + currentRoom.getLongDescription());
+        if(previousRooms.empty()){
+            System.out.println("You are at the first room!");
         }
-        else {
-            System.out.println("You are in the first room!");
+        else{
+            player.setCurrentRoom(previousRooms.pop());
+            System.out.println("You are now back at: " + player.getCurrentRoom().getLongDescription());
         }
     }
 
     public void getRoomInformation(){
-        System.out.println("You are " + currentRoom.getLongDescription());
+        System.out.println("You are " + player.getCurrentRoom().getLongDescription());
     }
 
     private boolean quit(Command command) 
@@ -183,6 +197,49 @@ public class Game{
         }
         else {
             return true;  // signal that we want to quit
+        }
+    }
+
+    private void drop(Command command){
+        if(!command.hasSecondWord()){
+            System.out.println("Drop what?");
+            return;
+        }
+        String itemName = command.getSecondWord();
+        player.getCurrentRoom().addItem(player.dropItem(itemName));
+    }
+
+    private void take(Command command){
+        if(!command.hasSecondWord()){
+            System.out.println("Take what?");
+            return;
+        }
+        String itemName = command.getSecondWord();
+        Item item = player.getCurrentRoom().getItem(itemName);
+        int playerCapacity = Player.MAX_INVENTORY_WEIGHT;
+        if(player.getInventoryWeight() + item.getWeight() <= playerCapacity){
+            player.take(item);
+            System.out.println(item.getDescription() + " taken");
+            player.getCurrentRoom().removeItem(item);
+        }
+        else{
+            System.out.println("The item load is too heavy! Try dropping some items.");
+        }
+        System.out.println("Current capacity: " + player.getInventoryWeight() + "g");
+    }
+
+    public void items(){
+        player.itemInventory();
+    }
+
+    public void cookieEat(){
+        Item cookie = player.getCurrentRoom().getItem("magic_cookie");
+        if(cookie != null){
+            player.eatCookie();
+            player.getCurrentRoom().removeItem(cookie);
+        }
+        else{
+            System.out.println("No cookie :/");
         }
     }
 }
