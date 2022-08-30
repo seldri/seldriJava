@@ -155,26 +155,11 @@ public class Game{
             System.out.println("There is no door!");
         }
         else {
-            //previousRoom = currentRoom;
             previousRooms.push(currentRoom);
             currentRoom = nextRoom;
             getRoomInformation();
         }
     }
-
-    // public void getBack(){
-    //     if(previousRoom != null){
-    //         Room tmp = currentRoom;
-    //         currentRoom = previousRoom;
-    //         previousRoom = tmp;
-    //         System.out.println("You went back to the previous Room!");
-    //         System.out.println("\n");
-    //         System.out.println("Your current room is: " + currentRoom.getLongDescription());
-    //     }
-    //     else {
-    //         System.out.println("You are in the first room!");
-    //     }
-    // }
 
     public void getBack(){
         if(previousRooms.empty()){
