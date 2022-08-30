@@ -16,8 +16,12 @@ public class Room{
         itemList = new ArrayList<>();
     }
 
-    public void placeItem(String description, String weight){
+    public void placeItem(String description, int weight){
         itemList.add(new Item(description, weight));
+    }
+
+    public void addItem(Item item){
+        itemList.add(item);
     }
 
     public String getDescription(){
@@ -51,5 +55,40 @@ public class Room{
             items += item.getItemInfo() + "\n";
         }
         return items;
+    }
+
+    public Item takeItem(String itemName){
+        Item item = null;
+        for(Item i : itemList){
+            if(i.getDescription().equals(itemName)){
+                item = i;
+            }
+        }
+        if(item == null){
+            System.out.println("There is no such item in this room");
+            return item;
+        }
+        itemList.remove(item);
+        System.out.println(item.getDescription() + " taken");
+        return item;
+    }
+
+    public Item getItem(String itemName){
+        Item item = null;
+        for(Item i : itemList){
+            if(i.getDescription().equals(itemName)){
+                item = i;
+            }
+        }
+        if(item == null){
+            System.out.println("There is no such item in this room!");
+            return item;
+        }
+        
+        return item;
+    }
+
+    public void removeItem(Item item){
+        itemList.remove(item);
     }
 }
