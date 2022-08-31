@@ -19,7 +19,7 @@ public class Command{
     }
 
     public boolean isUnknown(){
-        return (commandWord == CommandWord.UNKNOWN;);
+        return (commandWord == CommandWord.UNKNOWN);
     }
 
     public boolean hasSecondWord(){

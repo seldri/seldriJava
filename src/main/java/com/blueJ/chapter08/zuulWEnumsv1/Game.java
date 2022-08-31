@@ -76,30 +76,24 @@ public class Game
         System.out.println(currentRoom.getLongDescription());
     }
 
-    /**
-     * Given a command, process (that is: execute) the command.
-     * @param command The command to be processed.
-     * @return true If the command ends the game, false otherwise.
-     */
-    private boolean processCommand(Command command) 
-    {
+    private boolean processCommand(Command command){
         boolean wantToQuit = false;
 
         CommandWord commandWord = command.getCommandWord();
-
-        switch (commandWord) {
+        
+        switch(commandWord){
             case UNKNOWN:
                 System.out.println("I don't know what you mean...");
                 break;
-
+            
             case HELP:
                 printHelp();
                 break;
-
+            
             case GO:
                 goRoom(command);
                 break;
-
+            
             case QUIT:
                 wantToQuit = quit(command);
                 break;
@@ -107,13 +101,7 @@ public class Game
         return wantToQuit;
     }
 
-    // implementations of user commands:
 
-    /**
-     * Print out some help information.
-     * Here we print some stupid, cryptic message and a list of the 
-     * command words.
-     */
     private void printHelp() 
     {
         System.out.println("You are lost. You are alone. You wander");
@@ -123,10 +111,6 @@ public class Game
         parser.showCommands();
     }
 
-    /** 
-     * Try to go in one direction. If there is an exit, enter the new
-     * room, otherwise print an error message.
-     */
     private void goRoom(Command command) 
     {
         if(!command.hasSecondWord()) {
@@ -149,11 +133,6 @@ public class Game
         }
     }
 
-    /** 
-     * "Quit" was entered. Check the rest of the command to see
-     * whether we really quit the game.
-     * @return true, if this command quits the game, false otherwise.
-     */
     private boolean quit(Command command) 
     {
         if(command.hasSecondWord()) {
