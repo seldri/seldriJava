@@ -8,11 +8,13 @@ public class Room
 {
     private String description;
     private HashMap<String, Room> exits;        // stores exits of this room.
+    private boolean hasTrapDoor;
 
     public Room(String description) 
     {
         this.description = description;
         exits = new HashMap<>();
+        hasTrapDoor = false;
     }
 
     public void setExit(String direction, Room neighbor) 
@@ -43,6 +45,14 @@ public class Room
     public Room getExit(String direction) 
     {
         return exits.get(direction);
+    }
+
+    public boolean hasTrapDoor(){
+        return hasTrapDoor;
+    }
+
+    public void setTrapDoor(){
+        this.hasTrapDoor = true;
     }
 }
 
