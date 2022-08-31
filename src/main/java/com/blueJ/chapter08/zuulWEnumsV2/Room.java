@@ -1,4 +1,4 @@
-package com.blueJ.chapter08.zuulWEnumsV1;
+package com.blueJ.chapter08.zuulWEnumsV2;
 
 import java.util.Set;
 import java.util.HashMap;
@@ -45,3 +45,4 @@ public class Room
         return exits.get(direction);
     }
 }
+

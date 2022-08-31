@@ -1,4 +1,4 @@
-package com.blueJ.chapter08.zuulWEnumsV1;
+package com.blueJ.chapter08.zuulWEnumsV2;
 
 import java.util.Scanner;
 
@@ -31,15 +31,16 @@ public class Parser
 
         // Find up to two words on the line.
         try(
-            Scanner tokenizer = new Scanner(inputLine)){
+        Scanner tokenizer = new Scanner(inputLine)){
             if(tokenizer.hasNext()) {
                 word1 = tokenizer.next();      // get first word
                 if(tokenizer.hasNext()) {
-                    word2 = tokenizer.next();      // get second word
+                 word2 = tokenizer.next();      // get second word
                     // note: we just ignore the rest of the input line.
                 }
             }
         }
+
         return new Command(commands.getCommandWord(word1), word2);
     }
 
