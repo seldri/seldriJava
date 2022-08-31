@@ -231,7 +231,7 @@ public class Game{
     public void items(){
         player.itemInventory();
     }
-
+    //cookieMethod to increase maxweight  
     public void cookieEat(){
         Item cookie = player.getCurrentRoom().getItem("magic_cookie");
         if(cookie != null){

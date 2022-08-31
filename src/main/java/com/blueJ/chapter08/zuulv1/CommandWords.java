@@ -23,5 +23,4 @@ public class CommandWords{
         }
         return a;
     }
-
 }
