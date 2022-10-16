@@ -1,4 +1,4 @@
-package com.blueJ.chapter08.zuulWEnumsV1;
+package com.blueJ.chapter08.zuulWEnumsv1;
 
 import java.util.Scanner;
 
