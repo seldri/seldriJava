@@ -1,42 +1,19 @@
 package com.blueJ;
+// import java.lang.System;
 
-<<<<<<< HEAD
-import com.blueJ.chapter04.ProductSystem.*;
-    
-public class Main {
+import com.blueJ.chapter08.zuulv1.Game;
 
-    public static void main(String[] args) {
 
-        StockManager sm1 = new StockManager();
+//import com.blueJ.chapter07.LogAnalyzer;
 
-        sm1.addProduct(new Product(1, "Shoe"));
-        sm1.addProduct(new Product(2, "Hat"));
-        sm1.addProduct(new Product(3, "Jacket"));
-        
-        //System.out.println(sm1.findProduct(2));
-
-        sm1.delivery(1, 2);
-        sm1.delivery(2, 5);
-        sm1.delivery(3, 6);
-
-        sm1.addProduct(new Product(1, "Bob"));
-        //sm1.printProductDetails();
-
-        System.out.println(sm1.findProductName("Hat"));
-=======
-<<<<<<< HEAD
-//import com.blueJ.chapter03.*;
-//import com.blueJ.chapter03.Clock.Clockdisplay;
-=======
->>>>>>> main
 
 public class Main {
 
-<<<<<<< HEAD
-    
+
     public static void main(String[] args) {
-=======
->>>>>>> main
->>>>>>> chapter05
+
+        Game g1 = new Game();
+        g1.play();
+        g1.getRoomInformation();
     }
-} 
+}
