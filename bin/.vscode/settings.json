@@ -1,0 +1,11 @@
+{
+    "java.configuration.updateBuildConfiguration": "interactive",
+    "cSpell.ignoreWords": [
+        "Clockdisplay",
+        "Datenfelder",
+        "Numberdisplay"
+    ],
+    "cSpell.words": [
+        "logline"
+    ]
+}

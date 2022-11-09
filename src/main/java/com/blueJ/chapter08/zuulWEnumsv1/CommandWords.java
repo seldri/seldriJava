@@ -8,8 +8,10 @@ public class CommandWords{
     public CommandWords(){
         validCommands = new HashMap<>();
         validCommands.put("go", CommandWord.GO);
+        validCommands.put("gehe", CommandWord.GO);
         validCommands.put("help", CommandWord.HELP);
         validCommands.put("quit", CommandWord.QUIT);
+        validCommands.put("look", CommandWord.LOOK);
     }
 
     public boolean isCommand(String aString){
