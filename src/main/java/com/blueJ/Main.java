@@ -1,5 +1,6 @@
 package com.blueJ;
 
+<<<<<<< HEAD
 <<<<<<< .merge_file_a17748
 <<<<<<< HEAD
 import com.blueJ.chapter08.zuulv1.Game;
@@ -27,6 +28,8 @@ public class Main {
         
 >>>>>>> chapter04
 =======
+=======
+>>>>>>> chapter08
 //import com.blueJ.chapter08.zuulWEnumsV2.*;
 
 public class Main{
@@ -65,6 +68,9 @@ public class Main{
 		System.out.println("20 Rp: " + zwanziger + " Stück");
 		System.out.println("10 Rp: " + zehner + " Stück");
 		System.out.println("5 Rp: " + fuenferchen + " Stück");
+<<<<<<< HEAD
 >>>>>>> .merge_file_a05444
+=======
+>>>>>>> chapter08
     }
 }
