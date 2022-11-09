@@ -1,3 +1,5 @@
+package com.blueJ.chapter08.zuulWEnumsV2.Uebergang;
+
 import java.util.Scanner;
 
 public class Allgemein {
