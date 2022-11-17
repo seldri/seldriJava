@@ -183,7 +183,7 @@ public class EnvironmentView extends JFrame
     /**
      * Provide a graphical view of a rectangular grid.
      */
-    @SuppressWarnings("serial")
+    //@SuppressWarnings("serial")
     private class GridView extends JPanel
     {
         private final int GRID_VIEW_SCALING_FACTOR = 10;
