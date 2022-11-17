@@ -1,18 +1,18 @@
-import java.util.Scanner;
+package com.blueJ.chapter08.zuulWEnumsV2.Uebergang;
 public class Rechner {
 	public static void main(String[] args) {
 		
-		double fzA = 5;		// Länge von deinem Auto (Meter)
-		double fzB = 15;	// Länge des anderen Autos (Meter)
+		double fzA = 5;		// Lï¿½nge von deinem Auto (Meter)
+		double fzB = 15;	// Lï¿½nge des anderen Autos (Meter)
 		double vA = 80;		// Deine Geschwindigkeit (km/h)
 		double vB = 70;		// Geschwindigkeit des anderen Autos(km/h)
 		
 		System.out.println("Geschwindigkeit A: " + vA);
 		System.out.println("Geschwindigkeit B: " + vB);
-		System.out.println("Länge A: " + fzA);
-		System.out.println("Länge B: " + fzB);
+		System.out.println("Lï¿½nge A: " + fzA);
+		System.out.println("Lï¿½nge B: " + fzB);
 		
-		// Hier kommt die Lösung der Aufgabe hin...
+		// Hier kommt die Lï¿½sung der Aufgabe hin...
 		
 		double s1 = vA / 2;
 		double s2 = vB / 2;
@@ -25,7 +25,7 @@ public class Rechner {
 		System.out.println("Sicherheitsabstand 2: " + s2);
 		System.out.println("Relative Strecke: " + streckeRelativ + " Meter");
 		System.out.println("Relative Geschwindigkeit: " + geschwindigkeitRelativ + " km/h");
-		System.out.println("Benötigte Zeit: " + zeit + " Sekunden");
+		System.out.println("Benï¿½tigte Zeit: " + zeit + " Sekunden");
 		System.out.println("Ueberholweg: " + ueberholweg + " Meter");
 		
 	}

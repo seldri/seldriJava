@@ -129,7 +129,7 @@ public class Clock
     private void makeMenuBar(JFrame frame)
     {
         final int SHORTCUT_MASK =
-            Toolkit.getDefaultToolkit().getMenuShortcutKeyMask();
+            Toolkit.getDefaultToolkit().getMenuShortcutKeyMaskEx();
 
         JMenuBar menubar = new JMenuBar();
         frame.setJMenuBar(menubar);

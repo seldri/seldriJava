@@ -2,9 +2,6 @@ package com.blueJ.chapter07.brain;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.*;
-import javax.swing.event.*;
-
 /**
  * A GUI for the environment, with runtime controls.
 */

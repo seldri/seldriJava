@@ -26,6 +26,7 @@ public class LoglineTokenizer
             for(int i = 0; i < dataLine.length; i++) {
                 dataLine[i] = tokenizer.nextInt();
             }
+            tokenizer.close();
         }
         catch(java.util.NoSuchElementException e) {
             System.out.println("Insufficient data items on log line: " + logline);
