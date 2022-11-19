@@ -2,6 +2,7 @@ package com.blueJ.chapter10.networkV1;
 
 public class Main {
     public static void main(String[] args){
+        
         NewsFeed nf1 = new NewsFeed();
         FotoEinsendung f1 = new FotoEinsendung("Bob", "Foto1", "Mein erstes Foto");
         NachrichtenEinsendung n1 = new NachrichtenEinsendung("Bob", "Meine erste Nachricht");
