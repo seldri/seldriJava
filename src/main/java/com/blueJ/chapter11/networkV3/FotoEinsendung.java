@@ -25,6 +25,7 @@ public class FotoEinsendung extends KommentierteEinsendung{
     }
 
     public void anzeigen(){
+        super.anzeigen();
         System.out.println(" [" + dateiname + "] " );
         System.out.println(ueberschrift);
     }

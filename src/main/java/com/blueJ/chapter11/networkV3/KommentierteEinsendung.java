@@ -25,4 +25,18 @@ public class KommentierteEinsendung extends Einsendung{
     public void addKommentar(String text){
         kommentare.add(text);
     }
+
+    public void anzeigen(){
+        super.anzeigen();
+        if(gefielWieoft > 0){
+            System.out.println("Gefaellt " + gefielWieoft + " Personen.");
+        }
+        if(kommentare.isEmpty()){
+            System.out.println("Keine Kommentare.");
+        }
+        else{
+            System.out.println(kommentare.size() + " Kommentare. Hier klicken um anzusehen.");
+        }
+        
+    }
 }

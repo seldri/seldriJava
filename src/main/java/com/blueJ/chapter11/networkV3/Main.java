@@ -6,10 +6,16 @@ public class Main {
 
         FotoEinsendung f1 = new FotoEinsendung("Bob", "File1", "Neues Foto");
         NachrichtenEinsendung n1 = new NachrichtenEinsendung("Tim", "Neue Nachricht");
+        EreignisEinsendung e1 = new EreignisEinsendung("Manu", "Newsflash");
 
         nf1.addEinsendung(f1);
         nf1.addEinsendung(n1);
+        nf1.addEinsendung(e1);
 
-        nf1.zeigen();
+       // nf1.zeigen();
+    
+       System.out.println();
+       System.out.println(f1.toString());
+
     }
 }

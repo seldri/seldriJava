@@ -11,4 +11,9 @@ public class EreignisEinsendung extends Einsendung{
     public String getEreignisTyp(){
         return ereignisTyp;
     }
+
+    public void anzeigen(){
+        super.anzeigen();
+        System.out.println("Ereignistyp: " + ereignisTyp);
+    }
 }

@@ -19,6 +19,7 @@ public class NachrichtenEinsendung extends KommentierteEinsendung{
     }
 
     public void anzeigen(){
+        super.anzeigen();
         System.out.println(nachricht);
     }
 }
