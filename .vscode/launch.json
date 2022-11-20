@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch Main",
+            "request": "launch",
+            "mainClass": "com.blueJ.chapter10.networkV2.Main",
+            "projectName": "DriniTraining"
+        },
+        {
+            "type": "java",
+            "name": "Launch Main",
+            "request": "launch",
+            "mainClass": "com.blueJ.chapter10.networkV1.Main",
+            "projectName": "DriniTraining"
+        },
+        {
+            "type": "java",
             "name": "Launch Calculator",
             "request": "launch",
             "mainClass": "com.blueJ.chapter09.Calculator.Calculator",
