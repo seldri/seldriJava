@@ -37,7 +37,7 @@ public class Einsendung {
         return zeitstempel;
     }
 
-    public void anzeigen(){
+     public void anzeigen(){
         System.out.println(benutzername);
         System.out.println(zeitString(zeitstempel));
         /* if(gefielWieoft > 0){
@@ -53,7 +53,7 @@ public class Einsendung {
         else{
             System.out.println("  " + kommentare.size() + " Kommentar(e). Hier klicken um anzusehen.");
         } */
-    }
+    } 
 
     private String zeitString(long zeit){
         long aktuell = System.currentTimeMillis();
