@@ -4,18 +4,19 @@ public class Main {
     public static void main(String[] args){
         NewsFeed nf1 = new NewsFeed();
 
-        FotoEinsendung f1 = new FotoEinsendung("Bob", "File1", "Neues Foto");
-        NachrichtenEinsendung n1 = new NachrichtenEinsendung("Tim", "Neue Nachricht");
-        EreignisEinsendung e1 = new EreignisEinsendung("Manu", "Newsflash");
+        //FotoEinsendung f1 = new FotoEinsendung("Bob", "File1", "Neues Foto");
+        NachrichtenEinsendung n1 = new NachrichtenEinsendung("Tim", "Hatte heute Morgen..." + "\n" + "Doch jetzt habe ich vergessen...");
+       // EreignisEinsendung e1 = new EreignisEinsendung("Manu", "Newsflash");
 
-        nf1.addEinsendung(f1);
+       // f1.gefaellt();
+       // f1.gefaellt();
+
+        n1.gefaellt();
+
+       // nf1.addEinsendung(f1);
         nf1.addEinsendung(n1);
-        nf1.addEinsendung(e1);
+       // nf1.addEinsendung(e1);
 
-       // nf1.zeigen();
-    
-       System.out.println();
-       System.out.println(f1.toString());
-
+        nf1.zeigen();
     }
 }

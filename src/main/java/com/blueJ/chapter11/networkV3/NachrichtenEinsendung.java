@@ -19,7 +19,17 @@ public class NachrichtenEinsendung extends KommentierteEinsendung{
     }
 
     public void anzeigen(){
-        super.anzeigen();
+        System.out.println(getBenutzername());
         System.out.println(nachricht);
+        System.out.print(zeitString(getZeitstempel()) + ". ");
+        if(getGefielWieOft() > 0){
+            System.out.println(getGefielWieOft() + " Person(en) gefaellt dies.");
+        }
+        if(getKommentare().isEmpty()){
+            System.out.println("Keine Kommentare");
+        }
+        else{
+            System.out.println(getKommentare().size() + " Kommentare. Hier klicken um anzusehen");
+        }
     }
 }

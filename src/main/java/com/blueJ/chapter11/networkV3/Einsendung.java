@@ -9,20 +9,20 @@ public class Einsendung {
         zeitstempel = System.currentTimeMillis();
     }
 
-    public String getBenutzername(){
+    protected String getBenutzername(){
         return benutzername;
     }
 
-    public long getZeitstempel(){
+    protected long getZeitstempel(){
         return zeitstempel;
     }
 
-     public void anzeigen(){
+    public void anzeigen(){
         System.out.println(benutzername);
-        System.out.println(zeitString(zeitstempel));
-    } 
+        System.out.print(zeitString(zeitstempel) + ". ");
+    }
 
-    private String zeitString(long zeit){
+    protected String zeitString(long zeit){
         long aktuell = System.currentTimeMillis();
         long vergangeneMillis = aktuell - zeit;
         long sekunden = vergangeneMillis / 1000;

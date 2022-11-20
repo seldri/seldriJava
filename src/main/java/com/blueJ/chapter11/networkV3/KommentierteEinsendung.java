@@ -26,16 +26,24 @@ public class KommentierteEinsendung extends Einsendung{
         kommentare.add(text);
     }
 
+    protected int getGefielWieOft(){
+        return gefielWieoft;
+    }
+
+    protected ArrayList<String> getKommentare(){
+        return kommentare;
+    }
+
     public void anzeigen(){
         super.anzeigen();
         if(gefielWieoft > 0){
-            System.out.println("Gefaellt " + gefielWieoft + " Personen.");
+            System.out.println(gefielWieoft + " Person(en) gefaellt dies.");
         }
         if(kommentare.isEmpty()){
-            System.out.println("Keine Kommentare.");
+            System.out.println("Keine Kommentare");
         }
         else{
-            System.out.println(kommentare.size() + " Kommentare. Hier klicken um anzusehen.");
+            System.out.println(kommentare.size() + " Kommentare. Hier klicken um anzusehen");
         }
         
     }
