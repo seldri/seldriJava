@@ -19,6 +19,7 @@ public class Einsendung {
 
      public void anzeigen(){
         System.out.println(benutzername);
+        System.out.println(zeitString(zeitstempel));
     } 
 
     private String zeitString(long zeit){
