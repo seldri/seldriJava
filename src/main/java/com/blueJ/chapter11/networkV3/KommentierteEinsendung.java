@@ -1,4 +1,4 @@
-package com.blueJ.chapter10.networkV2;
+package com.blueJ.chapter11.networkV3;
 
 import java.util.ArrayList;
 
@@ -26,20 +26,25 @@ public class KommentierteEinsendung extends Einsendung{
         kommentare.add(text);
     }
 
-     public void zeigenKommentiert(){
-        anzeigen();
-        if(gefielWieoft > 0){
-            System.out.println(" - " + gefielWieoft + " Personen gefaellt dies.");
-        }
-        else{
-            System.out.println();
-        }
+    protected int getGefielWieOft(){
+        return gefielWieoft;
+    }
 
+    protected ArrayList<String> getKommentare(){
+        return kommentare;
+    }
+
+    public void anzeigen(){
+        super.anzeigen();
+        if(gefielWieoft > 0){
+            System.out.println(gefielWieoft + " Person(en) gefaellt dies.");
+        }
         if(kommentare.isEmpty()){
-            System.out.println(" Keine Kommentare.");
+            System.out.println("Keine Kommentare");
         }
         else{
-            System.out.println("  " + kommentare.size() + " Kommentar(e). Hier klicken um anzusehen.");
+            System.out.println(kommentare.size() + " Kommentare. Hier klicken um anzusehen");
         }
-    } 
+        
+    }
 }
