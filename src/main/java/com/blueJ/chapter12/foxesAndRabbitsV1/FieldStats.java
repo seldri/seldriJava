@@ -1,6 +1,6 @@
 package com.blueJ.chapter12.foxesAndRabbitsV1;
 
-import java.awt.Color;
+//import java.awt.Color;
 import java.util.HashMap;
 
 /**
