@@ -1,6 +1,7 @@
 package com.blueJ.chapter12.foxesAndRabbitsV2;
 
 import java.util.List;
+import java.util.ArrayList;
 import java.util.Random;
 
 /**
@@ -9,7 +10,7 @@ import java.util.Random;
  * @author David J. Barnes and Michael Kölling
  * @version 2016.02.29 (2)
  */
-public abstract class Animal
+public abstract class Animal extends Actor
 {
     protected static final Random rand = Randomizer.getRandom(); 
     // Whether the animal is alive or not.
@@ -48,15 +49,18 @@ public abstract class Animal
      * whatever it wants/needs to do.
      * @param newAnimals A list to receive newly born animals.
      */
-    abstract protected void act(List<Animal> newAnimals);
+    //abstract protected void act(List<Animal> newAnimals);
 
+    public boolean isActive(){
+        return alive;
+    }
     /**
      * Check whether the animal is alive or not.
      * @return true if the animal is still alive.
      */
     protected boolean isAlive()
     {
-        return alive;
+        return isActive();
     }
 
     /**
@@ -133,7 +137,7 @@ public abstract class Animal
     
     abstract protected Animal createAnimal(boolean randomAge, Field fiel, Location loc);
     
-    protected void giveBirth(List<Animal> newAnimals){
+    /* protected void giveBirth(List<Animal> newAnimals){
         Field field = getField();
         List<Location> free = field.getFreeAdjacentLocations(getLocation());
         int births = breed();
@@ -142,5 +146,16 @@ public abstract class Animal
             Animal young = createAnimal(false, field, loc);
             newAnimals.add(young);
         }
+    } */
+
+    protected void giveBirth(List newAnimals) { 
+        Field field = getField(); 
+        List free = field.getFreeAdjacentLocations(getLocation()); 
+        int births = breed(); 
+        for(int b = 0; b < births && free.size() > 0; b++) { 
+            Location loc = (Location) free.remove(0); 
+            Animal young = createAnimal(false, field, loc); 
+            newAnimals.add(young); 
+        } 
     }
 }

@@ -9,6 +9,13 @@
             "name": "Launch Main",
             "request": "launch",
             "mainClass": "com.blueJ.chapter12.foxesAndRabbitsV2.Main",
+            "projectName": "driniblueJ"
+        },
+        {
+            "type": "java",
+            "name": "Launch Main",
+            "request": "launch",
+            "mainClass": "com.blueJ.chapter12.foxesAndRabbitsV2.Main",
             "projectName": "DriniTraining"
         },
         {

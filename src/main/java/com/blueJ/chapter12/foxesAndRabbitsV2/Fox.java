@@ -2,7 +2,7 @@ package com.blueJ.chapter12.foxesAndRabbitsV2;
 
 import java.util.List;
 import java.util.Iterator;
-import java.util.Random;
+//import java.util.Random;
 
 /**
  * A simple model of a fox.
@@ -65,7 +65,7 @@ public class Fox extends Animal
      * @param field The field currently occupied.
      * @param newFoxes A list to return newly born foxes.
      */
-    protected void act(List<Animal> newFoxes)
+    /* protected void act(List<Animal> newFoxes)
     {
         incrementAge();
         incrementHunger();
@@ -86,8 +86,29 @@ public class Fox extends Animal
                 setDead();
             }
         }
-    }
+    } */
 
+    public void act(List newFoxes) { 
+        incrementAge(); 
+        incrementHunger(); 
+        if(isAlive()) { 
+            giveBirth(newFoxes); 
+            // Move towards a source of food if found. 
+            Location newLocation = findFood(); 
+            if(newLocation == null) { 
+                // No food found - try to move to a free location. 
+                newLocation = getField().freeAdjacentLocation(getLocation()); 
+            } 
+            // See if it was possible to move. 
+            if(newLocation != null) {
+                 setLocation(newLocation); 
+            } 
+            else { 
+                // Overcrowding. 
+                setDead(); 
+            } 
+        }
+    }
     /**
      * Increase the age. This could result in the fox's death.
      
