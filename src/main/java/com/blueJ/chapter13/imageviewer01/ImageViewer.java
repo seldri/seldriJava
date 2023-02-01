@@ -1,7 +1,7 @@
 package com.blueJ.chapter13.imageviewer01;
 
 import java.awt.*;
-import java.awt.event.*;
+//import java.awt.event.*;
 import javax.swing.*;
 
 public class ImageViewer{
@@ -26,12 +26,12 @@ public class ImageViewer{
 
     private void makeFrame(){
         frame = new JFrame("ImageViewer");
+        makeMenuBar();
+
         Container contentPane = frame.getContentPane();
 
         JLabel label = new JLabel("Ich bin ein Label ich kann text darstellen");
         contentPane.add(label);
-
-        makeMenuBar();
 
         frame.pack();
         frame.setVisible(true);
