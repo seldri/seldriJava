@@ -4,11 +4,24 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
-public class ImageViewer {
+public class ImageViewer{
     private JFrame frame;
     
     public ImageViewer(){
         makeFrame();
+    }
+
+    private void quit(){
+        System.out.println("Program Quit!");
+        System.exit(0);
+    }
+
+    private void openFile(){
+        System.out.println("File Opened!");
+    }
+
+    private void about(){
+        System.out.println("Pubilsher: seldri // Year: 2023");
     }
 
     private void makeFrame(){
@@ -18,32 +31,32 @@ public class ImageViewer {
         JLabel label = new JLabel("Ich bin ein Label ich kann text darstellen");
         contentPane.add(label);
 
-        // JButton button = new JButton("hello");
-        // contentPane.add(button);
-
-        makeMenu();
+        makeMenuBar();
 
         frame.pack();
         frame.setVisible(true);
     }
 
-    private void makeMenu(){
+    private void makeMenuBar(){
         JMenuBar menueBar = new JMenuBar();
         frame.setJMenuBar(menueBar);
 
-        JMenu dateiMenue = new JMenu("Datei");
-        menueBar.add(dateiMenue);
+        JMenu file = new JMenu("Datei");
+        menueBar.add(file);
 
-        JMenuItem openDatei = new JMenuItem("Öffnen");
-        dateiMenue.add(openDatei);
+        JMenuItem openFile = new JMenuItem("Öffnen");
+        openFile.addActionListener(e -> openFile());
+        file.add(openFile);
 
-        JMenuItem closeDatei = new JMenuItem("Beenden");
-        dateiMenue.add(closeDatei);
+        JMenuItem quitProgram = new JMenuItem("Beenden");
+        quitProgram.addActionListener(e -> quit());
+        file.add(quitProgram);
 
-        JMenu hilfeMenue = new JMenu("Hilfe");
-        menueBar.add(hilfeMenue);
+        JMenu help = new JMenu("Hilfe");
+        menueBar.add(help);
 
-        JMenuItem hilfeInfo = new JMenuItem("Info");
-        hilfeMenue.add(hilfeInfo);
+        JMenuItem information = new JMenuItem("Information");
+        information.addActionListener(e -> about());
+        help.add(information);
     }
 }
