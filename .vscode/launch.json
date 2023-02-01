@@ -8,6 +8,13 @@
             "type": "java",
             "name": "Launch Main",
             "request": "launch",
+            "mainClass": "com.blueJ.chapter13.imageviewer04.Main",
+            "projectName": "driniblueJ"
+        },
+        {
+            "type": "java",
+            "name": "Launch Main",
+            "request": "launch",
             "mainClass": "com.blueJ.chapter13.imageviewer01.Main",
             "projectName": "driniblueJ"
         },
