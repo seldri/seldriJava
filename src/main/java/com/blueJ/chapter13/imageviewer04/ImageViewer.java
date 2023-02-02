@@ -11,6 +11,7 @@ public class ImageViewer
     private ImagePanel imagePanel;
     private OFImage currentImage;
     private JLabel statusLabel;
+    private static final String VERSION = "Version 1.0";
     
     /**
      * Create an ImageViewer show it on screen.
@@ -109,12 +110,19 @@ public class ImageViewer
         imagePanel = new ImagePanel();
         contentPane.add(imagePanel, BorderLayout.CENTER);
 
-        statusLabel = new JLabel("Version 1.0");
+        statusLabel = new JLabel(VERSION);
         contentPane.add(statusLabel, BorderLayout.SOUTH);
 
         // building is done - arrange the components and show        
         frame.pack();
         frame.setVisible(true);
+    }
+
+    /*
+     * Display Information on GUI
+     */
+    private void showInfo(){
+        JOptionPane.showMessageDialog(frame, "ImageViewer: " + VERSION, "About ImageViewer", JOptionPane.INFORMATION_MESSAGE);
     }
     
     /**
@@ -157,5 +165,13 @@ public class ImageViewer
         JMenuItem thresholdItem = new JMenuItem("threshold");
             thresholdItem.addActionListener(e -> applyThreshold());
         filterMenu.add(thresholdItem);
+
+        // create help Menu
+        JMenu helpMenu = new JMenu("Help");
+        menubar.add(helpMenu);
+
+        JMenuItem informationItem = new JMenuItem("About");
+            informationItem.addActionListener(e -> showInfo());
+        helpMenu.add(informationItem);
     }
 }
