@@ -47,4 +47,49 @@ public class OFImage extends BufferedImage {
         int pixel = getRGB(x, y);
         return new Color(pixel);
     }
+
+    /*
+     * Make the given Image brighter
+     */
+    public void makeImageBrighter(){
+        for(int i = 0; i < getHeight(); i++) { 
+            for(int j = 0; j < getWidth(); j++) {
+                Color pixel = getPixel(j, i);
+                setPixel(j, i, pixel.brighter());
+            }
+        }
+    }
+
+    /*
+     * Make the given image darker
+     */
+    public void makeImageDarker(){
+        for(int i = 0; i < getHeight(); i++) { 
+            for(int j = 0; j < getWidth(); j++) {
+                Color pixel = getPixel(j, i);
+                setPixel(j, i, pixel.darker());
+            }
+        }
+    }
+
+    /*
+     * Apply a given threshold
+     */
+    public void threshold() { 
+        for(int y = 0; y < getHeight(); y++) { 
+            for(int x = 0; x < getWidth(); x++) {
+                Color pixel = getPixel(x, y);
+                int brightness = (pixel.getRed() + pixel.getBlue() + pixel.getGreen()) / 3;
+                if(brightness <= 100) { 
+                    setPixel(x, y, Color.BLACK);
+                }
+                else if(brightness <= 200) { 
+                    setPixel(x, y, Color.GRAY);
+                } 
+                else { 
+                    setPixel(x, y, Color.WHITE); 
+                } 
+            }
+        }
+    }
 }

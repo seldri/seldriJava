@@ -9,12 +9,15 @@ public class ImageViewer
 {
     private JFrame frame;
     private ImagePanel imagePanel;
+    private OFImage currentImage;
+    private JLabel statusLabel;
     
     /**
      * Create an ImageViewer show it on screen.
      */
     public ImageViewer()
     {
+        currentImage = null;
         makeFrame();
     }
 
@@ -26,8 +29,9 @@ public class ImageViewer
      */
     private void openFile()
     {
-        OFImage image = ImageFileManager.getImage();
-        imagePanel.setImage(image);
+        //OFImage image = ImageFileManager.getImage();
+        currentImage = ImageFileManager.getImage();
+        imagePanel.setImage(currentImage);
         frame.pack();
     }
     
@@ -38,9 +42,54 @@ public class ImageViewer
     {
         System.exit(0);
     }
+
+    /**
+     * Darker function: makes the given image darker
+     */
+    private void makeDarker(){
+        if(currentImage != null){
+            currentImage.makeImageDarker();
+            frame.repaint();
+            showStatus("Applied: Darker");
+        }
+        else{
+            showStatus("No Picture Available!");
+        }
+    }
     
+    /*
+     * Brighter function: makes the given image brighter
+     */
+    private void makeBrighter(){
+        if(currentImage != null){
+            currentImage.makeImageBrighter();
+            frame.repaint();
+            showStatus("Applied: Brighter");
+        }
+        else{
+            showStatus("No Picture Available!");
+        }
+    }
+
+    /*Threshhold function: makes the given image grey  
+    */
+    private void applyThreshold(){
+        if(currentImage != null){
+            currentImage.threshold();
+            frame.repaint();
+            showStatus("Applied: Threshold");
+        }
+        else{
+            showStatus("No Picture Available!");
+        }
+    }
+
+    private void showStatus(String status){
+        statusLabel.setText(status);
+    }
+   
     // ---- swing stuff to build the frame and all its components ----
-    
+
     /**
      * Create the Swing frame and its content.
      */
@@ -50,9 +99,18 @@ public class ImageViewer
         makeMenuBar(frame);
         
         Container contentPane = frame.getContentPane();
+        contentPane.setLayout(new BorderLayout(6,6));
         
+        
+        JLabel fileNameLabel = new JLabel();
+        contentPane.add(fileNameLabel, BorderLayout.NORTH);
+
+
         imagePanel = new ImagePanel();
-        contentPane.add(imagePanel);
+        contentPane.add(imagePanel, BorderLayout.CENTER);
+
+        statusLabel = new JLabel("Version 1.0");
+        contentPane.add(statusLabel, BorderLayout.SOUTH);
 
         // building is done - arrange the components and show        
         frame.pack();
@@ -84,5 +142,20 @@ public class ImageViewer
             quitItem.addActionListener(e -> quit());
         fileMenu.add(quitItem);
 
+        // create Filter menu
+        JMenu filterMenu = new JMenu("Filter");
+        menubar.add(filterMenu);
+
+        JMenuItem darkerItem = new JMenuItem("darker");
+            darkerItem.addActionListener(e -> makeDarker());
+        filterMenu.add(darkerItem);
+
+        JMenuItem brighterItem = new JMenuItem("brighter");
+            brighterItem.addActionListener(e -> makeBrighter());
+        filterMenu.add(brighterItem);
+
+        JMenuItem thresholdItem = new JMenuItem("threshold");
+            thresholdItem.addActionListener(e -> applyThreshold());
+        filterMenu.add(thresholdItem);
     }
 }
