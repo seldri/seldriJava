@@ -2,6 +2,8 @@ package com.blueJ.chapter13.imageviewer20;
 
 import java.awt.*;
 import java.awt.event.*;
+import java.util.ArrayList;
+
 import javax.swing.*;
 
 
@@ -12,6 +14,7 @@ public class ImageViewer
     private OFImage currentImage;
     private JLabel statusLabel;
     private static final String VERSION = "Version 1.0";
+    private ArrayList<Filter> filterList;
     
     /**
      * Create an ImageViewer show it on screen.
@@ -19,9 +22,22 @@ public class ImageViewer
     public ImageViewer()
     {
         currentImage = null;
+        filterList = createFilters();
         makeFrame();
     }
 
+    /*
+     *Create the needed filters
+     @return List of filters 
+     */
+    private ArrayList<Filter> createFilters(){
+        ArrayList<Filter> filterList = new ArrayList<>();
+        filterList.add(new DarkerFilter("Darker"));
+        filterList.add(new BrighterFilter("Brighter"));
+        filterList.add(new ThresholdFilter("Threshold"));
+        
+        return filterList;
+    }
 
     // ---- implementation of menu functions ----
     

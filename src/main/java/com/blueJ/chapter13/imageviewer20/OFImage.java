@@ -50,7 +50,7 @@ public class OFImage extends BufferedImage {
 
     /*
      * Make the given Image brighter
-     */
+     
     public void makeImageBrighter(){
         for(int i = 0; i < getHeight(); i++) { 
             for(int j = 0; j < getWidth(); j++) {
@@ -62,7 +62,7 @@ public class OFImage extends BufferedImage {
 
     /*
      * Make the given image darker
-     */
+     
     public void makeImageDarker(){
         for(int i = 0; i < getHeight(); i++) { 
             for(int j = 0; j < getWidth(); j++) {
@@ -74,7 +74,7 @@ public class OFImage extends BufferedImage {
 
     /*
      * Apply a given threshold
-     */
+     
     public void threshold() { 
         for(int y = 0; y < getHeight(); y++) { 
             for(int x = 0; x < getWidth(); x++) {
@@ -91,5 +91,5 @@ public class OFImage extends BufferedImage {
                 } 
             }
         }
-    }
+    }*/
 }
