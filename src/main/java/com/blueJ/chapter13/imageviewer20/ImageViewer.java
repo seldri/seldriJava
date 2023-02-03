@@ -60,47 +60,22 @@ public class ImageViewer
         System.exit(0);
     }
 
-    /**
-     * Darker function: makes the given image darker
-     */
-    private void makeDarker(){
+    //Filter Method
+    private void applyFilter(String filterName){
         if(currentImage != null){
-            currentImage.makeImageDarker();
-            frame.repaint();
-            showStatus("Applied: Darker");
+            for(Filter f : filterList){
+                if(f.getName().equals(filterName)){
+                    f.apply(currentImage);
+                    frame.repaint();
+                    showStatus("Applied: " + f.getName());
+                }
+            }
         }
         else{
-            showStatus("No Picture Available!");
+            showStatus("No Image available!");
         }
     }
     
-    /*
-     * Brighter function: makes the given image brighter
-     */
-    private void makeBrighter(){
-        if(currentImage != null){
-            currentImage.makeImageBrighter();
-            frame.repaint();
-            showStatus("Applied: Brighter");
-        }
-        else{
-            showStatus("No Picture Available!");
-        }
-    }
-
-    /*Threshhold function: makes the given image grey  
-    */
-    private void applyThreshold(){
-        if(currentImage != null){
-            currentImage.threshold();
-            frame.repaint();
-            showStatus("Applied: Threshold");
-        }
-        else{
-            showStatus("No Picture Available!");
-        }
-    }
-
     private void showStatus(String status){
         statusLabel.setText(status);
     }
@@ -169,18 +144,13 @@ public class ImageViewer
         // create Filter menu
         JMenu filterMenu = new JMenu("Filter");
         menubar.add(filterMenu);
-
-        JMenuItem darkerItem = new JMenuItem("darker");
-            darkerItem.addActionListener(e -> makeDarker());
-        filterMenu.add(darkerItem);
-
-        JMenuItem brighterItem = new JMenuItem("brighter");
-            brighterItem.addActionListener(e -> makeBrighter());
-        filterMenu.add(brighterItem);
-
-        JMenuItem thresholdItem = new JMenuItem("threshold");
-            thresholdItem.addActionListener(e -> applyThreshold());
-        filterMenu.add(thresholdItem);
+         
+        // add Filter Options to menu
+        for(Filter f : filterList){
+            JMenuItem item = new JMenuItem(f.getName());
+                item.addActionListener(e -> applyFilter(f.getName()));
+            filterMenu.add(item);
+        }
 
         // create help Menu
         JMenu helpMenu = new JMenu("Help");
