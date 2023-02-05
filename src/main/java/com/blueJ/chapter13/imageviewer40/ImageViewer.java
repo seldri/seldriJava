@@ -260,7 +260,7 @@ public class ImageViewer
     private void handleMousePressed(MouseEvent e) 
     {
         if(e.getButton() == MouseEvent.BUTTON1) {
-            if((e.getModifiers() & MouseEvent.SHIFT_MASK) == MouseEvent.SHIFT_MASK) {
+            if((e.getModifiersEx() & MouseEvent.SHIFT_DOWN_MASK) == MouseEvent.SHIFT_DOWN_MASK) {
                 chooseColor();
             }
             else {
@@ -367,7 +367,7 @@ public class ImageViewer
     private void makeMenuBar(JFrame frame)
     {
         final int SHORTCUT_MASK =
-            Toolkit.getDefaultToolkit().getMenuShortcutKeyMask();
+            Toolkit.getDefaultToolkit().getMenuShortcutKeyMaskEx();
 
         JMenuBar menubar = new JMenuBar();
         frame.setJMenuBar(menubar);
