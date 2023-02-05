@@ -254,7 +254,7 @@ public class ImageViewer
      */
     private void makeMenuBar(JFrame frame)
     {
-        final int SHORTCUT_MASK = Toolkit.getDefaultToolkit().getMenuShortcutKeyMask();
+        final int SHORTCUT_MASK = Toolkit.getDefaultToolkit().getMenuShortcutKeyMaskEx();
 
         JMenuBar menubar = new JMenuBar();
         frame.setJMenuBar(menubar);
